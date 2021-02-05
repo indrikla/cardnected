@@ -1,0 +1,108 @@
+{% extends 'base_template.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <title>
+        {% block title %} Home {% endblock %}
+     </title>
+</head>
+
+{% block content%}
+
+<div class="container ">
+    <div class="background">
+        <div class="background">
+            <img src="{% static 'images/a.png' %}" style="position: absolute; width: 44%; top:0; right:0;" class="background rellax" data-rellax-speed="-1">
+        </div>
+    </div>
+
+    <div class="background ">
+        <div class="background" style="position: absolute; top:0; left:0;">
+            <img src="{% static 'images/aa.png' %}" style="width: 99%;" class=" rellax" data-rellax-speed="-6">
+        </div>
+    </div>
+
+    <div class="background ">
+        <div class="background" style="position: absolute; top:368px; left:0;">
+            <img src="{% static 'images/aaa.png' %}" style="width: 100%;" class=" rellax" data-rellax-speed="4">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-7 padding-full margin rellax" data-rellax-speed="10">
+            <h1 class="title" style="font-size:4.5vw;">Build,<br>Strengthen,<br> <span id="anot">Stay connected.</span></h1>
+            <div class="col-lg-10 paddingless">
+                <h5 class="header" style="font-size:1.5vw;">Removing Barriers to Social Connection through <span id="anot2">Meaningful Conversation</span></h5>
+            </div>
+            <div class="padding-y" style="display:inline-block;">
+                <button class="primary" style="display:inline-block;"> Play Now</button>
+            </div> 
+        </div>
+        <div class="col-lg-5  rellax" data-rellax-speed="7">
+            <div class="center">
+                <div class="stack">
+                    <div class="cardd"> <img class="background card-shadow" src="{% static 'images/card1.svg' %}" style="width: 91%;transform: rotate(-5deg)"> </div>
+                    <div class="cardd"> <img class="background card-shadow" src="{% static 'images/card2.svg' %}" style="width: 91%; transform: rotate(4deg)"> </div>
+                    <div class="cardd"> <img class="background card-shadow"src="{% static 'images/card3.svg' %}" style="width: 91%;"> </div>
+                    <div class="cardd"> <img class="background card-shadow"src="{% static 'images/card4.svg' %}" style="width: 91%; transform: rotate(-8deg)"> </div>
+                    <div class="cardd"> <img class="background card-shadow rotate"src="{% static 'images/card5.svg' %}" style="width: 91%;"> </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-lg-12 background">
+        <div class=" rellax" data-rellax-speed="16">
+            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+            <lottie-player mode="bounce" class="center" src="https://assets2.lottiefiles.com/packages/lf20_4hht5fjk.json"  background="transparent"  speed="0.7"  style="width: 200px; margin-top:-10vw"  loop  autoplay></lottie-player>
+        </div>
+    </div>
+
+
+
+</div>
+
+
+<script type="module">
+    import { annotate } from 'https://unpkg.com/rough-notation?module';
+    const e = document.querySelector('#anot');
+    const annotation = annotate(e, { type: 'underline', color: 'rgba(218, 42, 42, 0.979)' });
+
+    const e2 = document.querySelector('#anot2');
+    const annotation2 = annotate(e2, { type: 'highlight', color: 'rgba(218,42, 42, 0.2)' });
+
+    $(document).ready(function(){
+        $(".title").hover(function(){
+            annotation.show();
+        });
+        $(".stack").hover(function(){
+            annotation2.show();
+        });
+    })
+
+    let stack = document.querySelector(".stack");
+    Array.prototype.slice.call(stack.children).reverse().forEach(i => stack.append(i));
+
+    stack.addEventListener("click", swap);
+
+    function swap(e) {
+    let cardd = document.querySelector(".cardd:last-child");
+    if (e.target !== cardd) return;
+    cardd.style.animation = "swap 700ms forwards";
+
+        setTimeout(() => {
+            cardd.style.animation = "";
+            stack.prepend(cardd);
+        }, 700);
+    }
+
+    var rellax = new Rellax('.rellax');
+
+
+</script>
+
+
+
+{% endblock content %}

@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+html, body{
+    width:100%;
+    overflow-x:hidden;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+    background-color: #f9f9f9;
+}
