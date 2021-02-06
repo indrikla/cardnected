@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
+from django.http import HttpResponse, JsonResponse
 from django.core import serializers
 from .models import *
 
@@ -16,12 +16,12 @@ def gameplay(request):
 def form(request):
     data = {'success': False} 
     if request.method == 'POST':        
-        print("MASUK FORM")
         gameStateResponse = request.POST.get('gameStateOnGoing')
         request.session['gameStateOnGoing'] = gameStateResponse
-        print(request.session['gameStateOnGoing'])
         data['success'] = True
+        # request.session.set_expiry(0)
         return JsonResponse(data, safe=False)
+
     elif request.method == 'GET':
         return render(request, "form.html")
 
@@ -38,8 +38,7 @@ def updateSession(request):
     if request.method == 'POST':        
         key = request.POST.get('key')
         value = request.POST.get('value')
-        print(key)
-        print(value)
         request.session[key] = value
         print(request.session[key])
-    return HttpResponse('Success')
+    # return redirect('/')
+    return HttpResponse("ok")

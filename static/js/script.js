@@ -20,6 +20,7 @@ function shuffle(array) {
 }
 
 function updateSession(key, value) {
+	sessionStorage.setItem(key, value)
 	$.ajax({
 		method: 'POST',
 		url: 'updateSession?' + 'key=' + key + '&value=' + value,
@@ -60,13 +61,14 @@ $(document).ready(() => {
 	}
   
 	$('.js-tilt').click(function(event) {
-		event.preventDefault();
-
 		$(this).css('transition', 'transform 0.8s')
 		$(this).css('transform-style', 'preserve-3d')
-		$(this).css('transform', 'rotateY(180deg)')   
+		$(this).css('transform', 'rotateY(180deg)')
 
-		$(this).replaceWith('<img src="/static/images/empty.svg" style="width: 250px; max-height: 250px;">') 
+		// $(this).removeClass("js-tilt")
+		// $(this).children("lottie-player").replaceWith('<img src="/static/images/empty.svg" style="width: 240px; max-height: 240px;">') 
+		$(this).replaceWith('<div class="padding-y"><img src="/static/images/empty.svg" style="width: 250px; max-height: 250px;"></div>') 
+
 
 		modal.style.display = "block";
 		numOfCardOpened++;
@@ -78,15 +80,23 @@ $(document).ready(() => {
 			method: 'GET',
 			url: 'openCard?' + 'pack=' + sessionStorage.getItem("pack"),
 			success: function(response) {
-				var cardJSONData = JSON.parse((response))
+				console.log(response)
+				if (response.success === false) {
+					updateSession("gameStateOnGoing", "No")
+					window.location = '/';
 
-				if (numOfCardOpened == 1) {
-					noRepeatArray = Array.from(Array(cardJSONData.length-1).keys());
-					shuffle(noRepeatArray);
+				} else {
+					var cardJSONData = JSON.parse((response))
+
+					if (numOfCardOpened == 1) {
+						noRepeatArray = Array.from(Array(cardJSONData.length-1).keys());
+						shuffle(noRepeatArray);
+					}
+					var cardImage = cardJSONData[noRepeatArray[numOfCardOpened-1]].fields['image'];
+					$('#shownCard').attr('src', cardImage);
 				}
-				var cardImage = cardJSONData[noRepeatArray[numOfCardOpened-1]].fields['image'];
-				$('#shownCard').attr('src', cardImage);
 			}
+				
 		})
 
 
@@ -186,21 +196,12 @@ $(document).ready(() => {
 				window.location = '/play'
 			}
 		}) 
-
-    // var appended = '<div class="js-tilt"><lottie-player src="https://assets4.lottiefiles.com/packages/lf20_apuwyk3o.json"  background="transparent"  speed="2"  style="width: 250px; height: 250px;" hover loop  ></lottie-player></div>'
-    // var plus = numOfCard/5;
-    // for (var i = 0; i < 20; i+=plus) {
-    //   $('#gamePlace').append('appended')
-    //   $('#gamePlace').append('appended')
-    //   $('#gamePlace').append('appended')
-    //   $('#gamePlace').append('appended')
-    //   $('#gamePlace').append('appended')
-    // }
-
   	})
+	  
 
 	$('#finishButton').click(function (event) {
 		event.preventDefault()
+		updateSession("gameStateOnGoing", "No")
 		sessionStorage.clear()
 		window.location = '/'
 	})
@@ -214,7 +215,7 @@ $(document).ready(() => {
 	$('.nav-link').click(function (event) {
 		if (sessionStorage.getItem("gameStateOnGoing") != undefined) {
 
-			if (sessionStorage.getItem("gameStateOnGoing") === "Yes") {
+			if (sessionStorage.getItem("gameStateOnGoing") === "Yes" && window.location.pathname === '/play/') {
 				var alertPopUp = confirm("Oops! You have a game going on. Do you wish to terminate the game?");
 	
 				if (alertPopUp == true) {
@@ -238,6 +239,20 @@ $(document).ready(() => {
 		}
 
 	})
-	
+
+	// $(window).on("beforeunload", function(e) { 
+	// 	updateSession("gameStateOnGoing", "No")
+
+	// 	// if (window.location.pathname === '/play/') {
+	// 	// 	return confirm("Do you really want to close?"); 
+	// 	// 	// console.log(conf)
+	// 	// 	// if (conf == true) {
+	// 	// 	// 	updateSession("gameStateOnGoing", "No")
+	// 	// 	// } else {
+
+	// 	// 	// }
+	// 	// }
+        
+    // });
 
 })
