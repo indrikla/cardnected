@@ -132,6 +132,13 @@ border-radius: 28.4074px;
     transform: rotate(90deg);
 
 }
+
+.hidden {
+    display: none;
+}
+.show {
+    display: block;
+}
 .oliver {
     font-family: 'Oliver', arial;
 }

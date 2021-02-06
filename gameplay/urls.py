@@ -4,6 +4,7 @@ from . import views
 
 urlpatterns = [
     path('', views.gameplay, name= 'gameplay'),
-    path('showCard', views.showCard, name='showCard'),
-    path('openCard', views.openCard, name='openCard')
+    path('form', views.form, name='form'),
+    path('openCard', views.openCard, name='openCard'),
+    path('updateSession', views.updateSession, name='updateSession'),
 ]

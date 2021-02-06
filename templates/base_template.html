@@ -16,6 +16,7 @@
 <body>
   <div class="container">
     <nav class="navbar navbar-expand-lg navbar-light">
+      {% csrf_token %}
         <a class="navbar-brand" href="{% url 'home' %}">
           <div class="relasi"> <img id="logo" class="background"src="{% static 'images/logo.svg' %}">  ber-<b>relasi</b> </div>
         </a>
@@ -32,7 +33,7 @@
             </li>
 
             <li class="nav-item padding-x">
-              <a class="nav-link" href="{% url 'gameplay' %}"> LET'S PLAY </a>
+              <a class="nav-link" id="playNavBar" href="{% url 'gameplay' %}"> LET'S PLAY </a>
             </li>
 
             <li class="nav-item padding-x">
