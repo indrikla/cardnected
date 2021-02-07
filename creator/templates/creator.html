@@ -1,0 +1,65 @@
+{% extends 'base_template.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <title>
+        {% block title %} Home {% endblock %}
+     </title>
+</head>
+
+{% block content%}
+
+<div class="container" style="overflow: hidden;">
+    <div class="row margin">
+        <div class=col-lg-6>
+            
+        </div>
+        <div class=col-lg-6>
+            <h4 class=title><span style="color: maroon;"><u>about</u></span></h4>
+            <h1 class=title>The Creator</h1>
+            <p class="padding-y" style="line-height: 172%;letter-spacing: 0.010em;">
+                HEELLOOOO! My name is Indri Klarissa Ramadhanti, you can call me <b>Risa</b> for short. 
+                Currently studying <b>Information System</b> in University of Indonesia, class of 2019. <br><br>
+                I define myself as an aspiring <b>Creative Technologist</b> who loves to create and dream 
+                to build something that help others builds. Oh, and also <span class=med><i>I do believe in the power of technology to make human lives better.</i></span> <br><br>
+                I have plenty of experiences in <b>Visual and Motion Design</b> and is highly interested in 
+                <span class=anot>Edtech, User Experience Design, Computer Animation, Augmented/Virtual Reality, and Web Development.</span>        
+            </p>
+        </div>
+    </div>
+</div>
+<script type="module">
+    import { annotate } from 'https://unpkg.com/rough-notation?module';
+    const e = document.querySelector('.anot');
+    const annotation = annotate(e, { type: 'underline', color: 'rgba(218, 42, 42, 0.979)' });
+
+    $(document).ready(function(){
+        $(".anot").hover(function(){
+            annotation.show();
+        });
+    })
+
+    let stack = document.querySelector(".stack");
+    Array.prototype.slice.call(stack.children).reverse().forEach(i => stack.append(i));
+
+    stack.addEventListener("click", swap);
+
+    function swap(e) {
+    let cardd = document.querySelector(".cardd:last-child");
+    if (e.target !== cardd) return;
+    cardd.style.animation = "swap 700ms forwards";
+
+        setTimeout(() => {
+            cardd.style.animation = "";
+            stack.prepend(cardd);
+        }, 700);
+    }
+
+    var rellax = new Rellax('.rellax');
+
+
+</script>
+
+{% endblock content %}

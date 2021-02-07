@@ -1,8 +1,17 @@
-var numOfCard = 10;
+var numOfCard = 8;
 var numOfCardOpened = 0;
 var noRepeatArray = [];
 var finalUrl;
 var level = 1;
+
+function finishRedirect() {	
+	updateSession("gameStateOnGoing", "No");
+	sessionStorage.clear();
+	window.location = 'feedback';
+}
+function alertPopUp() {	
+	alert("The game has finished! You will be directed to the feedback page in 3 seconds");
+}
 
 function shuffle(array) {
 	var i = array.length,
@@ -36,6 +45,14 @@ function updateSession(key, value) {
 }
 
 $(document).ready(() => {
+	
+	$('#playNowButton').click(function(e) {
+		window.location.pathname = '/play/'
+	})
+	
+	$('#logoHome').click(function(e) {
+		window.location.pathname = '/'
+	})
 
 	$('#shownCard').tilt({
 		scale: 1.02,	
@@ -51,12 +68,20 @@ $(document).ready(() => {
 	$('.close').click(function(event) {
 		event.preventDefault();
 		modal.style.display = "none";
+		if (numOfCardOpened == numOfCard && modal.style.display != "block") {
+			setTimeout(alertPopUp, 2000);
+			setTimeout(finishRedirect, 3000);
+		}
 	})
 
 	window.onclick = function(event) {
 		event.preventDefault();
 		if (event.target == modal) {
 			modal.style.display = "none";
+			if (numOfCardOpened == numOfCard && modal.style.display != "block") {
+				setTimeout(alertPopUp, 2000);
+				setTimeout(finishRedirect, 3000);
+			}
 		}
 	}
   
@@ -80,7 +105,6 @@ $(document).ready(() => {
 			method: 'GET',
 			url: 'openCard?' + 'pack=' + sessionStorage.getItem("pack"),
 			success: function(response) {
-				console.log(response)
 				if (response.success === false) {
 					updateSession("gameStateOnGoing", "No")
 					window.location = '/';
@@ -99,10 +123,9 @@ $(document).ready(() => {
 				
 		})
 
-
-		// if (numOfCardOpened == numOfCard && modal.style.display != "block") {
-		//   alert("udah selese");
-		// }
+		if (numOfCardOpened == numOfCard && modal.style.display != "block") {
+			alert("udah selese")
+		}
 	})
 
   $('#numOfPlayer').on('change', function (event) {

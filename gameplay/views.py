@@ -7,11 +7,10 @@ from .models import *
 
 def gameplay(request):
     # request.session['gameStateOnGoing'] = "No"
-    if(request.session['gameStateOnGoing'] == "Yes"):
-        print(request.session['gameStateOnGoing'])
-        return render(request, "gameplay.html")
-    else :
-        return redirect(form)
+    if 'gameStateOnGoing' in request.session.keys():
+        if(request.session['gameStateOnGoing'] == "Yes"):
+            return render(request, "gameplay.html")
+    return redirect(form)
 
 def form(request):
     data = {'success': False} 
@@ -42,3 +41,6 @@ def updateSession(request):
         print(request.session[key])
     # return redirect('/')
     return HttpResponse("ok")
+
+def feedback(request):
+    return render(request, "feedback.html")

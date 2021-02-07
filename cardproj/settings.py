@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'home',
     'cardpack',
     'gameplay',
+    'creator',
 ]
 
 MIDDLEWARE = [

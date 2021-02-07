@@ -7,4 +7,5 @@ urlpatterns = [
     path('form', views.form, name='form'),
     path('openCard', views.openCard, name='openCard'),
     path('updateSession', views.updateSession, name='updateSession'),
+    path('feedback', views.feedback, name='feedback'),
 ]
