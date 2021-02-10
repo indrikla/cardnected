@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, JsonResponse
 from django.core import serializers
-from .models import *
+from gameplay.models import *
 
 # Create your views here.
 
@@ -15,8 +15,10 @@ def gameplay(request):
 def form(request):
     data = {'success': False} 
     if request.method == 'POST':        
+        print(request.POST)
         gameStateResponse = request.POST.get('gameStateOnGoing')
         request.session['gameStateOnGoing'] = gameStateResponse
+
         data['success'] = True
         # request.session.set_expiry(0)
         return JsonResponse(data, safe=False)
@@ -25,10 +27,16 @@ def form(request):
         return render(request, "form.html")
 
 def openCard(request):
-    if (request.GET.get('pack') == "DigDeeper"):
-        json_data = serializers.serialize('json', DigDeeper.objects.all())
+    if (request.GET.get('pack') == "DigDeeper1"):
+        json_data = serializers.serialize('json', DigDeeper1.objects.all())
+    elif (request.GET.get('pack') == "DigDeeper2"):
+        json_data = serializers.serialize('json', DigDeeper2.objects.all())
+    elif (request.GET.get('pack') == "DigDeeper3"):
+        json_data = serializers.serialize('json', DigDeeper3.objects.all())
     elif (request.GET.get('pack') == "IceBreak"):
         json_data = serializers.serialize('json', IceBreak.objects.all())
+    elif (request.GET.get('pack') == "Perspective"):
+        json_data = serializers.serialize('json', Perspective.objects.all())
     else :
         json_data = {'success' : False}
     return JsonResponse(json_data, safe=False)

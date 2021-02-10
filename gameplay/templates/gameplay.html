@@ -17,7 +17,7 @@
         <!-- Modal content -->
         <div class="modal-content w3-animate-zoom" >
           <div style="margin-left: auto"><span class="close">&times;</span></div>
-            <p class="center gaegu" style="font-size:3vw;font-weight:400; padding-bottom:1vw"> <b><u><span id="playerTurn"></span></u></b>'s turn to answer</p>
+            <p id="multiHide"class="center gaegu" style="font-size:3vw;font-weight:400; padding-bottom:1vw"> <b><u><span id="playerTurn"></span></u></b>'s turn to answer</p>
             <img id="shownCard" class="center card-shadow" src="#" style="width: 55%;">
             <!-- <p class="center gaegu" style="font-size:1.5vw;font-weight:500; padding-top:0.5vw"> Helptext here</p> -->
         </div>
@@ -32,22 +32,65 @@
 
     </div>
 
-    <div class="col-lg-12 padding-full margin">
-        <h1 class="title" style="font-size:6vw;text-align:center;">GamePlay</h1>
-        <h5 class="gaegu center" style="font-weight:500; text-align:center"> Please select a card too see the question</h5>
-        <div id="gamePlace" class="row" style="margin-left: 2.5vw;">
-            <div class="js-tilt padding-y"><lottie-player src="https://assets4.lottiefiles.com/packages/lf20_apuwyk3o.json"  background="transparent"  speed="2"  style="width: 250px; height: 250px;" hover loop  ></lottie-player></div>
-            <div class="js-tilt padding-y"><lottie-player src="https://assets4.lottiefiles.com/packages/lf20_apuwyk3o.json"  background="transparent"  speed="2"  style="width: 250px; height: 250px;" hover loop  ></lottie-player></div>
-            <div class="js-tilt padding-y"><lottie-player src="https://assets4.lottiefiles.com/packages/lf20_apuwyk3o.json"  background="transparent"  speed="2"  style="width: 250px; height: 250px;" hover loop  ></lottie-player></div>
-            <div class="js-tilt padding-y"><lottie-player src="https://assets4.lottiefiles.com/packages/lf20_apuwyk3o.json"  background="transparent"  speed="2"  style="width: 250px; height: 250px;" hover loop  ></lottie-player></div>
-            <div class="js-tilt padding-y"><lottie-player src="https://assets4.lottiefiles.com/packages/lf20_apuwyk3o.json"  background="transparent"  speed="2"  style="width: 250px; height: 250px;" hover loop  ></lottie-player></div>
-            <div class="js-tilt padding-y"><lottie-player src="https://assets4.lottiefiles.com/packages/lf20_apuwyk3o.json"  background="transparent"  speed="2"  style="width: 250px; height: 250px;" hover loop  ></lottie-player></div>
-            <div class="js-tilt padding-y"><lottie-player src="https://assets4.lottiefiles.com/packages/lf20_apuwyk3o.json"  background="transparent"  speed="2"  style="width: 250px; height: 250px;" hover loop  ></lottie-player></div>
-            <div class="js-tilt padding-y"><lottie-player src="https://assets4.lottiefiles.com/packages/lf20_apuwyk3o.json"  background="transparent"  speed="2"  style="width: 250px; height: 250px;" hover loop  ></lottie-player></div>
-            <!-- <div class="js-tilt padding-y"><lottie-player src="https://assets4.lottiefiles.com/packages/lf20_apuwyk3o.json"  background="transparent"  speed="2"  style="width: 250px; height: 250px;" hover loop  ></lottie-player></div>
-            <div class="js-tilt padding-y"><lottie-player src="https://assets4.lottiefiles.com/packages/lf20_apuwyk3o.json"  background="transparent"  speed="2"  style="width: 250px; height: 250px;" hover loop  ></lottie-player></div>
-            <div class="js-tilt padding-y"><lottie-player src="https://assets4.lottiefiles.com/packages/lf20_apuwyk3o.json"  background="transparent"  speed="2"  style="width: 250px; height: 250px;" hover loop  ></lottie-player></div>
-            <div class="js-tilt padding-y"><lottie-player src="https://assets4.lottiefiles.com/packages/lf20_apuwyk3o.json"  background="transparent"  speed="2"  style="width: 250px; height: 250px;" hover loop  ></lottie-player></div> -->
+    <div class="col-lg-12 padding-full margin text-center">
+        <h1 class="title" style="font-size:6vw;">GamePlay</h1>
+        <h5 class="gaegu center" style="font-weight:500;"> Please select a card too see the question</h5>
+        <a id="showCard" href="#">Show Cards</a>
+        <div id=master>
+            <div id="gamePlace12" class="row hidden" style="margin-left: 2.5vw;">
+                <div class="js-tilt padding-y"><lottie-player src="https://assets8.lottiefiles.com/private_files/lf30_bozsm8dp.json"  background="transparent"  speed="2"  style="width: 250px; height: 250px;" hover loop  ></lottie-player></div>
+                <div class="js-tilt padding-y"><lottie-player src="https://assets8.lottiefiles.com/private_files/lf30_bozsm8dp.json"  background="transparent"  speed="2"  style="width: 250px; height: 250px;" hover loop  ></lottie-player></div>
+                <div class="js-tilt padding-y"><lottie-player src="https://assets8.lottiefiles.com/private_files/lf30_bozsm8dp.json"  background="transparent"  speed="2"  style="width: 250px; height: 250px;" hover loop  ></lottie-player></div>
+                <div class="js-tilt padding-y"><lottie-player src="https://assets8.lottiefiles.com/private_files/lf30_bozsm8dp.json"  background="transparent"  speed="2"  style="width: 250px; height: 250px;" hover loop  ></lottie-player></div>
+                <div class="js-tilt padding-y"><lottie-player src="https://assets8.lottiefiles.com/private_files/lf30_bozsm8dp.json"  background="transparent"  speed="2"  style="width: 250px; height: 250px;" hover loop  ></lottie-player></div>
+                <div class="js-tilt padding-y"><lottie-player src="https://assets8.lottiefiles.com/private_files/lf30_bozsm8dp.json"  background="transparent"  speed="2"  style="width: 250px; height: 250px;" hover loop  ></lottie-player></div>
+                <div class="js-tilt padding-y"><lottie-player src="https://assets8.lottiefiles.com/private_files/lf30_bozsm8dp.json"  background="transparent"  speed="2"  style="width: 250px; height: 250px;" hover loop  ></lottie-player></div>
+                <div class="js-tilt padding-y"><lottie-player src="https://assets8.lottiefiles.com/private_files/lf30_bozsm8dp.json"  background="transparent"  speed="2"  style="width: 250px; height: 250px;" hover loop  ></lottie-player></div>
+                <div class="js-tilt padding-y"><lottie-player src="https://assets8.lottiefiles.com/private_files/lf30_bozsm8dp.json"  background="transparent"  speed="2"  style="width: 250px; height: 250px;" hover loop  ></lottie-player></div>
+                <div class="js-tilt padding-y"><lottie-player src="https://assets8.lottiefiles.com/private_files/lf30_bozsm8dp.json"  background="transparent"  speed="2"  style="width: 250px; height: 250px;" hover loop  ></lottie-player></div>
+                <div class="js-tilt padding-y"><lottie-player src="https://assets8.lottiefiles.com/private_files/lf30_bozsm8dp.json"  background="transparent"  speed="2"  style="width: 250px; height: 250px;" hover loop  ></lottie-player></div>
+                <div class="js-tilt padding-y"><lottie-player src="https://assets8.lottiefiles.com/private_files/lf30_bozsm8dp.json"  background="transparent"  speed="2"  style="width: 250px; height: 250px;" hover loop  ></lottie-player></div>
+            </div>
+            <div id="gamePlace16" class="row hidden" style="margin-left: 2.5vw;">
+                <div class="js-tilt padding-y"><lottie-player src="https://assets8.lottiefiles.com/private_files/lf30_bozsm8dp.json"  background="transparent"  speed="2"  style="width: 250px; height: 250px;" hover loop  ></lottie-player></div>
+                <div class="js-tilt padding-y"><lottie-player src="https://assets8.lottiefiles.com/private_files/lf30_bozsm8dp.json"  background="transparent"  speed="2"  style="width: 250px; height: 250px;" hover loop  ></lottie-player></div>
+                <div class="js-tilt padding-y"><lottie-player src="https://assets8.lottiefiles.com/private_files/lf30_bozsm8dp.json"  background="transparent"  speed="2"  style="width: 250px; height: 250px;" hover loop  ></lottie-player></div>
+                <div class="js-tilt padding-y"><lottie-player src="https://assets8.lottiefiles.com/private_files/lf30_bozsm8dp.json"  background="transparent"  speed="2"  style="width: 250px; height: 250px;" hover loop  ></lottie-player></div>
+                <div class="js-tilt padding-y"><lottie-player src="https://assets8.lottiefiles.com/private_files/lf30_bozsm8dp.json"  background="transparent"  speed="2"  style="width: 250px; height: 250px;" hover loop  ></lottie-player></div>
+                <div class="js-tilt padding-y"><lottie-player src="https://assets8.lottiefiles.com/private_files/lf30_bozsm8dp.json"  background="transparent"  speed="2"  style="width: 250px; height: 250px;" hover loop  ></lottie-player></div>
+                <div class="js-tilt padding-y"><lottie-player src="https://assets8.lottiefiles.com/private_files/lf30_bozsm8dp.json"  background="transparent"  speed="2"  style="width: 250px; height: 250px;" hover loop  ></lottie-player></div>
+                <div class="js-tilt padding-y"><lottie-player src="https://assets8.lottiefiles.com/private_files/lf30_bozsm8dp.json"  background="transparent"  speed="2"  style="width: 250px; height: 250px;" hover loop  ></lottie-player></div>
+                <div class="js-tilt padding-y"><lottie-player src="https://assets8.lottiefiles.com/private_files/lf30_bozsm8dp.json"  background="transparent"  speed="2"  style="width: 250px; height: 250px;" hover loop  ></lottie-player></div>
+                <div class="js-tilt padding-y"><lottie-player src="https://assets8.lottiefiles.com/private_files/lf30_bozsm8dp.json"  background="transparent"  speed="2"  style="width: 250px; height: 250px;" hover loop  ></lottie-player></div>
+                <div class="js-tilt padding-y"><lottie-player src="https://assets8.lottiefiles.com/private_files/lf30_bozsm8dp.json"  background="transparent"  speed="2"  style="width: 250px; height: 250px;" hover loop  ></lottie-player></div>
+                <div class="js-tilt padding-y"><lottie-player src="https://assets8.lottiefiles.com/private_files/lf30_bozsm8dp.json"  background="transparent"  speed="2"  style="width: 250px; height: 250px;" hover loop  ></lottie-player></div>
+                <div class="js-tilt padding-y"><lottie-player src="https://assets8.lottiefiles.com/private_files/lf30_bozsm8dp.json"  background="transparent"  speed="2"  style="width: 250px; height: 250px;" hover loop  ></lottie-player></div>
+                <div class="js-tilt padding-y"><lottie-player src="https://assets8.lottiefiles.com/private_files/lf30_bozsm8dp.json"  background="transparent"  speed="2"  style="width: 250px; height: 250px;" hover loop  ></lottie-player></div>
+                <div class="js-tilt padding-y"><lottie-player src="https://assets8.lottiefiles.com/private_files/lf30_bozsm8dp.json"  background="transparent"  speed="2"  style="width: 250px; height: 250px;" hover loop  ></lottie-player></div>
+                <div class="js-tilt padding-y"><lottie-player src="https://assets8.lottiefiles.com/private_files/lf30_bozsm8dp.json"  background="transparent"  speed="2"  style="width: 250px; height: 250px;" hover loop  ></lottie-player></div>
+            </div>
+            <div id="gamePlace20" class="row hidden" style="margin-left: 2.5vw;">
+                <div class="js-tilt padding-y"><lottie-player src="https://assets8.lottiefiles.com/private_files/lf30_bozsm8dp.json"  background="transparent"  speed="2"  style="width: 250px; height: 250px;" hover loop  ></lottie-player></div>
+                <div class="js-tilt padding-y"><lottie-player src="https://assets8.lottiefiles.com/private_files/lf30_bozsm8dp.json"  background="transparent"  speed="2"  style="width: 250px; height: 250px;" hover loop  ></lottie-player></div>
+                <div class="js-tilt padding-y"><lottie-player src="https://assets8.lottiefiles.com/private_files/lf30_bozsm8dp.json"  background="transparent"  speed="2"  style="width: 250px; height: 250px;" hover loop  ></lottie-player></div>
+                <div class="js-tilt padding-y"><lottie-player src="https://assets8.lottiefiles.com/private_files/lf30_bozsm8dp.json"  background="transparent"  speed="2"  style="width: 250px; height: 250px;" hover loop  ></lottie-player></div>
+                <div class="js-tilt padding-y"><lottie-player src="https://assets8.lottiefiles.com/private_files/lf30_bozsm8dp.json"  background="transparent"  speed="2"  style="width: 250px; height: 250px;" hover loop  ></lottie-player></div>
+                <div class="js-tilt padding-y"><lottie-player src="https://assets8.lottiefiles.com/private_files/lf30_bozsm8dp.json"  background="transparent"  speed="2"  style="width: 250px; height: 250px;" hover loop  ></lottie-player></div>
+                <div class="js-tilt padding-y"><lottie-player src="https://assets8.lottiefiles.com/private_files/lf30_bozsm8dp.json"  background="transparent"  speed="2"  style="width: 250px; height: 250px;" hover loop  ></lottie-player></div>
+                <div class="js-tilt padding-y"><lottie-player src="https://assets8.lottiefiles.com/private_files/lf30_bozsm8dp.json"  background="transparent"  speed="2"  style="width: 250px; height: 250px;" hover loop  ></lottie-player></div>
+                <div class="js-tilt padding-y"><lottie-player src="https://assets8.lottiefiles.com/private_files/lf30_bozsm8dp.json"  background="transparent"  speed="2"  style="width: 250px; height: 250px;" hover loop  ></lottie-player></div>
+                <div class="js-tilt padding-y"><lottie-player src="https://assets8.lottiefiles.com/private_files/lf30_bozsm8dp.json"  background="transparent"  speed="2"  style="width: 250px; height: 250px;" hover loop  ></lottie-player></div>
+                <div class="js-tilt padding-y"><lottie-player src="https://assets8.lottiefiles.com/private_files/lf30_bozsm8dp.json"  background="transparent"  speed="2"  style="width: 250px; height: 250px;" hover loop  ></lottie-player></div>
+                <div class="js-tilt padding-y"><lottie-player src="https://assets8.lottiefiles.com/private_files/lf30_bozsm8dp.json"  background="transparent"  speed="2"  style="width: 250px; height: 250px;" hover loop  ></lottie-player></div>
+                <div class="js-tilt padding-y"><lottie-player src="https://assets8.lottiefiles.com/private_files/lf30_bozsm8dp.json"  background="transparent"  speed="2"  style="width: 250px; height: 250px;" hover loop  ></lottie-player></div>
+                <div class="js-tilt padding-y"><lottie-player src="https://assets8.lottiefiles.com/private_files/lf30_bozsm8dp.json"  background="transparent"  speed="2"  style="width: 250px; height: 250px;" hover loop  ></lottie-player></div>
+                <div class="js-tilt padding-y"><lottie-player src="https://assets8.lottiefiles.com/private_files/lf30_bozsm8dp.json"  background="transparent"  speed="2"  style="width: 250px; height: 250px;" hover loop  ></lottie-player></div>
+                <div class="js-tilt padding-y"><lottie-player src="https://assets8.lottiefiles.com/private_files/lf30_bozsm8dp.json"  background="transparent"  speed="2"  style="width: 250px; height: 250px;" hover loop  ></lottie-player></div>
+                <div class="js-tilt padding-y"><lottie-player src="https://assets8.lottiefiles.com/private_files/lf30_bozsm8dp.json"  background="transparent"  speed="2"  style="width: 250px; height: 250px;" hover loop  ></lottie-player></div>
+                <div class="js-tilt padding-y"><lottie-player src="https://assets8.lottiefiles.com/private_files/lf30_bozsm8dp.json"  background="transparent"  speed="2"  style="width: 250px; height: 250px;" hover loop  ></lottie-player></div>
+                <div class="js-tilt padding-y"><lottie-player src="https://assets8.lottiefiles.com/private_files/lf30_bozsm8dp.json"  background="transparent"  speed="2"  style="width: 250px; height: 250px;" hover loop  ></lottie-player></div>
+                <div class="js-tilt padding-y"><lottie-player src="https://assets8.lottiefiles.com/private_files/lf30_bozsm8dp.json"  background="transparent"  speed="2"  style="width: 250px; height: 250px;" hover loop  ></lottie-player></div>
+            </div>
         </div>
         <div class=margin>
             <button id=finishButton style="margin-left:79%;background-color:#3d3d3d" class="button">Finish</button>

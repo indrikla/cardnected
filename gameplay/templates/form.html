@@ -12,73 +12,100 @@
 {% block content%}
 <div class="container" style="overflow: hidden;">
 
-{% if request.session.gameStateOnGoing == "Yes" %}
-  <h1 class=title> You have on going game! Do you wish to <a id="terminateLink">terminate</a> the game?</h1>
-{% else %}
- 
-  <div class=row>
-    <div class="col-lg-6 margin"> 
-      a
-    </div>
-    <div class="col-lg-6 margin"> 
-      <h1 class="title">Customize your game;</h1>
-      <h4 class="gaegu" style="font-weight: 500;">Please fill out the form below</h4>
-      
-      <form class="padding-y" action="" method="POST">
-        {% csrf_token %}
-          <div class="form-group">
-            <label for="numOfPlayerForm">Number of Players</label>
-            <select class="form-control" id="numOfPlayer" required>
-              <option disabled selected value> -- select an option -- </option>
-              <option>Two Players</option>
-              <option>Multi Players</option>
-            </select>
-          </div>
-  
-          <div class="playerName hidden">
-            <div class="row">
-              <div class="form-group col-lg-6">
-                <label>First Player</label>
-                <input class="form-control" id="firstPlayer" placeholder="Name">
-              </div>
-        
-              <div class="form-group col-lg-6">
-                <label>Second Player</label>
-                <input class="form-control" id="secondPlayer" placeholder="Name">
-              </div>
-            </div>
-          </div>
-  
-          <div class="form-group">
-            <label for="numOfPlayerForm">Card Pack</label>
-            <select  class="form-control" id="pack" required>
-              <option disabled selected value> -- select an option -- </option>
-              <option id="MixAndMatchOption">Mix & Match</option>
-              <option id = "DigDeeperOption">Dig Deeper</option>
-              <option id="IceBreakOption">Break the Ice: Let the Fun Begin!</option>
-              <option id="LoveBirdsOption">Lovebirds Edition</option>
-              <option id="StrangerOption">Hello, Nice to Meet You, Stranger</option>
-            </select>
-            <small class="form-text text-muted">Still not sure what pack to choose? <a href="#">Read More</a></small>
-          </div>
-  
-          <div class="level hidden">
-            <div class="form-group">
-              <label>Level</label>
-              <select class="form-control" id="levelSelection" required>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-              </select>
-              <small class="form-text text-muted">The higher the level, the deeper the conversation.</small>
-            </div>
-          </div>
-  
-        </form>
-         <button class="button primary" id="formGamePlayButton" style="float: right;">PLAY NOW</button>
+	{% if request.session.gameStateOnGoing == "Yes" %}
+	<div class="col-lg-12  text-center margin">
+		<h3 class="title"> Oops! You still have an on going game! </h3>
+		<p>
+			You can go back <a href="{% url 'gameplay'%}">here</a> or do you wish to <a id="terminateLink">terminate</a> the game?	
+		</p>
+	</div>
 
-    </div> 
-  </div>
+		
+	
+	
+	{% else %}
+		<div class=row>
+			<div class="col-lg-6 margin center" style="width: 87%;margin-bottom:5vw"> 
+				<img class="center centerver" src="{% static 'images/creatorBG.png' %}" style="width: 87%;margin-bottom:5vw" class="padding-y center">
+			</div>
+
+			<div class=sorry-form>
+				<h3 class="col-lg-12 title titletext text-center">
+					Oops! We're sorry! Currently the game is only available on desktop.
+				</h3>
+			</div>
+			<div class="col-lg-6 margin pc-only-form"> 
+				<h1 class="title">Customize your game;</h1>
+				<h4 class="gaegu" style="font-weight: 500;">Please fill out the form below</h4>
+				
+				<form class="padding-y" action="" method="POST">
+					{% csrf_token %}
+					<div class="form-group">
+						<label for="numOfPlayerForm">Number of Players</label>
+						<select class="form-control" id="numOfPlayer" required="required">
+							<option disabled selected value> -- select an option -- </option>
+							<option>Two Players</option>
+							<option>Multi Players</option>
+						</select>
+					</div>
+
+					<div class="playerName hidden">
+						<div class="row">
+						<div class="form-group col-lg-6">
+							<label>First Player</label>
+							<input class="form-control" id="firstPlayer" placeholder="Name">
+						</div>
+					
+						<div class="form-group col-lg-6">
+							<label>Second Player</label>
+							<input class="form-control" id="secondPlayer" placeholder="Name">
+						</div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="numOfPlayerForm">Card Pack</label>
+						<select  class="form-control" id="pack" required="required">
+							<option disabled selected value> -- select an option -- </option>
+							<option id="MixAndMatchOption">Mix & Match</option>
+							<option id ="DigDeeperOption">Dig Deeper</option>
+							<option id="IceBreakOption">Break the Ice: Let the Fun Begin!</option>
+							<option id="PerspectiveOption">Perspective</option>
+							<option id="LoveBirdsOption">Lovebirds Edition</option>
+							<option id="StrangerOption">Hello Nice to Meet You, Stranger</option>
+						</select>
+						<small class="form-text text-muted">Still not sure what pack to choose? <a href="#">Read More</a></small>
+					</div>
+
+					<div class="level hidden">
+						<div class="form-group">
+							<label>Level</label>
+							<select class="form-control" id="levelSelection">
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+							</select>
+							<small class="form-text text-muted">The higher the level, the deeper the conversation.</small>
+						</div>
+					</div>
+
+					<div class="numOfCard">
+						<div class="form-group">
+							<label>Number of Cards</label>
+							<select class="form-control" id="numOfCardSelection">
+								<option>12</option>
+								<option>16</option>
+								<option>20</option>
+							</select>
+							<small class="form-text text-muted">Number of cards = Number of questions</small>
+						</div>
+					</div>
+
+				</form>
+				<button class="button primary" id="formGamePlayButton" style="float: right;">PLAY NOW</button>
+
+			</div> 
+		</div>
 
   {% endif %}
 

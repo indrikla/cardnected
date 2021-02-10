@@ -6,36 +6,52 @@ CARDPACK_CHOICES = (
     ("Love Birds", "Mix & Match"), 
 ) 
 # Create your models here.
-class DigDeeper(models.Model):
-    index = models.IntegerField('Index', null=True, blank=False)
-    level = models.IntegerField('Level', default=1,
-        validators=[
-                MaxValueValidator(5),
-                MinValueValidator(1)
-            ]
-        )
+class DigDeeper1(models.Model):
     question = models.TextField('Question', max_length=400, null=True, blank=False)
     image = models.CharField('Image', max_length=100, null=True, blank=False)
 
     class Meta:
-        db_table = 'DigDeeper'
+        db_table = 'DigDeeper1'
+
+    def __str__(self):
+        return self.question
+
+class DigDeeper2(models.Model):
+    question = models.TextField('Question', max_length=400, null=True, blank=False)
+    image = models.CharField('Image', max_length=100, null=True, blank=False)
+
+    class Meta:
+        db_table = 'DigDeeper2'
+
+    def __str__(self):
+        return self.question
+
+class DigDeeper3(models.Model):
+    question = models.TextField('Question', max_length=400, null=True, blank=False)
+    image = models.CharField('Image', max_length=100, null=True, blank=False)
+
+    class Meta:
+        db_table = 'DigDeeper3'
 
     def __str__(self):
         return self.question
 
 class IceBreak(models.Model):
-    index = models.IntegerField('Index', null=True, blank=False)
-    level = models.IntegerField('Level', default=1,
-        validators=[
-                MaxValueValidator(5),
-                MinValueValidator(1)
-            ]
-        )
     question = models.TextField('Question', max_length=400, null=True, blank=False)
     image = models.CharField('Image', max_length=100, null=True, blank=False)
 
     class Meta:
         db_table = 'IceBreak'
+
+    def __str__(self):
+        return self.question
+
+class Perspective(models.Model):
+    question = models.TextField('Question', max_length=400, null=True, blank=False)
+    image = models.CharField('Image', max_length=100, null=True, blank=False)
+
+    class Meta:
+        db_table = 'Perspective'
 
     def __str__(self):
         return self.question
