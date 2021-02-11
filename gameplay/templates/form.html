@@ -25,8 +25,10 @@
 	
 	{% else %}
 		<div class=row>
-			<div class="col-lg-6 margin center" style="width: 87%;margin-bottom:5vw"> 
-				<img class="center centerver" src="{% static 'images/creatorBG.png' %}" style="width: 87%;margin-bottom:5vw" class="padding-y center">
+			<div class="col-lg-6 margin center"> 
+				<iframe class="center" src='https://my.spline.design/librarydevicemodel-58215c617fd3f2343829956e1ba84489/' frameborder='0' width='100%' height='100%'></iframe>                    <!-- <canvas id="canvas3d"></canvas> -->
+                    
+				<!-- <img class="center centerver" src="{% static 'images/creatorBG.png' %}" style="width: 87%;margin-bottom:5vw" class="padding-y center"> -->
 			</div>
 
 			<div class=sorry-form>
@@ -65,8 +67,8 @@
 
 					<div class="form-group">
 						<label for="numOfPlayerForm">Card Pack</label>
-						<select  class="form-control" id="pack" required="required">
-							<option disabled selected value> -- select an option -- </option>
+						<select  class="form-control" id="pack" required>
+							<option disabled selected value value=""> -- select an option -- </option>
 							<option id="MixAndMatchOption">Mix & Match</option>
 							<option id ="DigDeeperOption">Dig Deeper</option>
 							<option id="IceBreakOption">Break the Ice: Let the Fun Begin!</option>
@@ -110,5 +112,15 @@
   {% endif %}
 
 </div>
+<script>
+	// Global namespace (backwards-compatibility)
+	var SPE = {};
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+<script src="https://cdn.spline.design/lib/anime.min.js"></script>
+<script src="https://cdn.spline.design/lib/spline.runtime.min.js"></script>
+<script src="{% static 'js/assets.js' %}"></script>
+<script src="{% static 'js/scene.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
 
 {% endblock content %}

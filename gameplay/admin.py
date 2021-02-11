@@ -26,3 +26,18 @@ class PerspectiveAdmin(admin.ModelAdmin):
 class IceBreakAdmin(admin.ModelAdmin):
     list_display = ('id', 'question', 'image')
     search_fields = ('question', 'image')
+
+@admin.register(models.Lovebirds)
+class LovebirdsAdmin(admin.ModelAdmin):
+    list_display = ('id', 'question', 'image')
+    search_fields = ('question', 'image')
+
+@admin.register(models.Stranger)
+class StrangerAdmin(admin.ModelAdmin):
+    list_display = ('id', 'question', 'image')
+    search_fields = ('question', 'image')
+
+@admin.register(models.MixNMatch)
+class MixNMatchAdmin(admin.ModelAdmin):
+    list_display = ('id', 'question', 'image')
+    search_fields = ('question', 'image')

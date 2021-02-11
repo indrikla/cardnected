@@ -160,7 +160,7 @@ $(document).ready(() => {
 	$('.close').click(function(event) {
 		event.preventDefault();
 		modal.style.display = "none";
-		if (numOfCardOpened == numOfCard && modal.style.display != "block") {
+		if (numOfCardOpened == sessionStorage.getItem("numOfCard") && modal.style.display != "block") {
 			setTimeout(alertPopUp, 2000);
 			setTimeout(finishRedirect, 3000);
 		}
@@ -170,7 +170,7 @@ $(document).ready(() => {
 		event.preventDefault();
 		if (event.target == modal) {
 			modal.style.display = "none";
-			if (numOfCardOpened == numOfCard && modal.style.display != "block") {
+			if (numOfCardOpened == sessionStorage.getItem("numOfCard") && modal.style.display != "block") {
 				setTimeout(alertPopUp, 2000);
 				setTimeout(finishRedirect, 3000);
 			}
@@ -275,6 +275,30 @@ $(document).ready(() => {
 		numOfCard = $('#numOfCardSelection').val();
 		sessionStorage.setItem("numOfCard", numOfCard)
 
+
+		if ($('#numOfPlayer').val() == 'Two Players') {
+			sessionStorage.setItem('Players', 'Two')
+			$('.playerName').toggleClass('.show')
+			var first = $('#firstPlayer').val();
+			var second = $('#secondPlayer').val();
+			var firstPlayerClean = first.substring(0,36);
+			var secondPlayerClean = second.substring(0,36);
+			console.log(firstPlayerClean)
+
+			var firstPlayer = $('#firstPlayer').val() != "" ? sessionStorage.setItem("firstPlayer", firstPlayerClean) : sessionStorage.setItem("firstPlayer", "Player 1")
+			var secondPlayer = $('#secondPlayer').val() != "" ? sessionStorage.setItem("secondPlayer", secondPlayerClean) : sessionStorage.setItem("secondPlayer", "Player 2")
+
+			finalUrl = 'form?' + 'pack=' + pack + '&firstPlayer=' + firstPlayer + '&secondPlayer=' + secondPlayer;   
+
+		} else if ($('#numOfPlayer').val() == 'Multi Players') {
+			sessionStorage.setItem('Players', 'Multi')
+			finalUrl = 'form?' + 'pack=' + pack;
+
+		} else {
+			alert("Please select one 'Number of Players'")
+			return ;
+		}
+		
 		// sessionStorage.setItem("pack", NAMA MODEL DI DJANGOMODEL)
 		if (pack == "Dig Deeper") {
 			
@@ -289,28 +313,16 @@ $(document).ready(() => {
 		} else if (pack == "Break the Ice: Let the Fun Begin!") {
 			sessionStorage.setItem("pack", "IceBreak")
 		} else if (pack == "Mix & Match") {
-
+			sessionStorage.setItem("pack", "MixNMatch")
 		} else if (pack == "Lovebirds Edition") {
-
+			sessionStorage.setItem("pack", "Lovebirds")
 		} else if (pack == "Hello Nice to Meet You, Stranger") {
-
+			sessionStorage.setItem("pack", "Stranger")
 		} else if (pack == "Perspective") {
 			sessionStorage.setItem("pack", "Perspective")
-		}
-		
-
-		if ($('#numOfPlayer').val() == 'Two Players') {
-			sessionStorage.setItem('Players', 'Two')
-			$('.playerName').toggleClass('.show')
-			
-			var firstPlayer = $('#firstPlayer').val() != "" ? sessionStorage.setItem("firstPlayer", $('#firstPlayer').val()) : sessionStorage.setItem("firstPlayer", "Player 1")
-			var secondPlayer = $('#secondPlayer').val() != "" ? sessionStorage.setItem("secondPlayer", $('#secondPlayer').val()) : sessionStorage.setItem("secondPlayer", "Player 2")
-
-			finalUrl = 'form?' + 'pack=' + pack + '&firstPlayer=' + firstPlayer + '&secondPlayer=' + secondPlayer;   
-
 		} else {
-			sessionStorage.setItem('Players', 'Multi')
-			finalUrl = 'form?' + 'pack=' + pack;
+			alert("Please select one 'Card Pack'")
+			return ;
 		}
 
 		$.ajax({
@@ -339,16 +351,14 @@ $(document).ready(() => {
 		}
 	})
 
-	
+
 
 	$('#finishButton').click(function (event) {
 		event.preventDefault();
 		var alertPopUp = confirm("Oops! You haven't picked all the cards yet. Are you sure you want to finish the game?");
 	
 			if (alertPopUp == true) {
-				updateSession("gameStateOnGoing", "No")
-				sessionStorage.clear()
-				window.location = '/'
+				finishRedirect()
 			}
 	})
 
