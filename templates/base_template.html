@@ -30,17 +30,20 @@
           
           <ul class="navbar-nav justify-content-center" style="margin-left: auto; margin-right:auto;">
 
-            <li class="nav-item dropdown" style="padding-right: 2vw;">
+          <li class="nav-item  padding-x" >
+            <a class="nav-link" data-toggle="dropdown" href="{% url 'home' %}" role="button" aria-haspopup="true" aria-expanded="false">HOME  </a>
+          </li>
+            <!-- <li class="nav-item dropdown" style="padding-right: 2vw;">
               <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">HOME  </a>
               <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">About</a>
-                <a class="dropdown-item" href="#">Our Goals</a>
+                <a class="dropdown-item linkin" href="/#about">About</a>
+                <a class="dropdown-item link" href="/#goals">Our Goals</a>
                 <a class="dropdown-item" href="/#howtoplay">How To Play</a>
-                <a class="dropdown-item" href="#">Card Pack</a>
+                <a class="dropdown-item" href="/#cardpack">Card Pack</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Feedback</a>
+                <a class="dropdown-item" href="{% url 'feedback' %}">Feedback</a>
               </div>
-            </li>
+            </li> -->
 
             <li class="nav-item padding-x">
               <a class="nav-link active" id="playNavBar" href="{% url 'gameplay' %}">     LET'S PLAY</a>

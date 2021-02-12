@@ -93,6 +93,10 @@ border-radius: 28.4074px;
 .margin-2 {
     margin:2vw;
 }
+.margin-x {
+    margin-left: 1vw;
+    margin-right: 1vw;
+}
 
 #style-3::-webkit-scrollbar-track
 {

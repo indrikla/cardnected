@@ -108,17 +108,15 @@ $(document).ready(() => {
 		}
 	});
 
-	$('#customers-testimonials2').owlCarousel( {
+	$('#cardpack-carousel').owlCarousel( {
+		items: 3,
 		loop: true,
 		center: true,
-		items: 3,
 		margin: 10,
-		autoplay: true,
-		dots:true,
-    	nav:true,
-		autoplayTimeout: 8500,
-		smartSpeed: 450,
-  		navText: ['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>'],
+		callbacks: true,
+		URLhashListener: true,
+		autoplayHoverPause: true,
+		startPosition: 'URLHash',
 		responsive: {
 			0: {
 				items: 1
@@ -131,6 +129,30 @@ $(document).ready(() => {
 			}
 		}
 	});
+
+	// $('#customers-testimonials2').owlCarousel( {
+	// 	loop: true,
+	// 	center: true,
+	// 	items: 3,
+	// 	margin: 10,
+	// 	autoplay: true,
+	// 	dots:true,
+    // 	nav:true,
+	// 	autoplayTimeout: 8500,
+	// 	smartSpeed: 450,
+  	// 	navText: ['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>'],
+	// 	responsive: {
+	// 		0: {
+	// 			items: 1
+	// 		},
+	// 		768: {
+	// 			items: 2
+	// 		},
+	// 		1170: {
+	// 			items: 3
+	// 		}
+	// 	}
+	// });
 
 	$('#shownCard').tilt({
 		scale: 1.02,	
@@ -176,6 +198,12 @@ $(document).ready(() => {
 			}
 		}
 	}
+
+	$('.cardpack').click(function(event) {
+		$(this).css('transition', 'transform 0.8s')
+		$(this).css('transform-style', 'preserve-3d')
+		$(this).css('transform', 'rotateY(180deg)')
+	})
   
 	$('.js-tilt').click(function(event) {
 		$(this).css('transition', 'transform 0.8s')
@@ -399,6 +427,10 @@ $(document).ready(() => {
 	$('.link').click(function (e){
 		e.preventDefault();
 		window.open($(this).attr('href'), '_blank')
+	})
+
+	$('.linkin').click(function (e){
+		window.location = ($(this).attr('href'))
 	})
 
 	// $(window).on("beforeunload", function(e) { 

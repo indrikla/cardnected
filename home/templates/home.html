@@ -46,11 +46,13 @@
             <div class="col-lg-5  rellax pc-only" data-rellax-speed="7">
                 <div class="center">
                     <div class="stack">
-                        <div class="cardd"> <img class="background card-shadow" src="{% static 'images/card1.svg' %}" style="width: 91%;transform: rotate(-5deg)"> </div>
-                        <div class="cardd"> <img class="background card-shadow" src="{% static 'images/card2.svg' %}" style="width: 91%; transform: rotate(4deg)"> </div>
-                        <div class="cardd"> <img class="background card-shadow"src="{% static 'images/card3.svg' %}" style="width: 91%;"> </div>
-                        <div class="cardd"> <img class="background card-shadow"src="{% static 'images/card4.svg' %}" style="width: 91%; transform: rotate(-8deg)"> </div>
-                        <div class="cardd"> <img class="background card-shadow rotate"src="{% static 'images/card5.svg' %}" style="width: 91%;"> </div>
+                        <div class="cardd"> <img class="background card-shadow" src="{% static 'images/C1.png' %}" style="width: 91%;transform: rotate(-5deg)"> </div>
+                        <div class="cardd"> <img class="background card-shadow" src="{% static 'images/C2.png' %}" style="width: 91%; transform: rotate(4deg)"> </div>
+                        <div class="cardd"> <img class="background card-shadow"src="{% static 'images/C3.png' %}" style="width: 91%;"> </div>
+                        <div class="cardd"> <img class="background card-shadow"src="{% static 'images/C4.png' %}" style="width: 91%; transform: rotate(-5deg)"> </div>
+                        <div class="cardd"> <img class="background card-shadow rotate"src="{% static 'images/C5.png' %}" style="width: 91%;"> </div>
+                        <div class="cardd"> <img class="background card-shadow"src="{% static 'images/C6.png' %}" style="width: 91%; transform: rotate(2deg)"> </div>
+                        
                     </div>
                 </div>
             </div>
@@ -110,7 +112,7 @@
 
                         <div class="item"style="margin-bottom: 0px;">
                             <div class="shadow-effect">
-                                <img class="img-responsive" src="{% static 'images/lonely.png' %}">
+                                <img class="img-responsive" src="{% static 'images/2.png' %}">
                                 <div class="item-details text-center" >
                                     <h3 class="title">Loneliness <br>Kills</h3>
                                     <span class="dots2"></span>
@@ -127,7 +129,7 @@
 
                         <div class="item"style="margin-bottom: 0px;">
                             <div class="shadow-effect">
-                                <img class="img-responsive" src="{% static 'images/lonelyPandemic.png' %}">
+                                <img class="img-responsive" src="{% static 'images/1.png' %}">
                                 <div class="item-details text-center" >
                                     <h3 class="title">The Increasing Loneliness</h3>
                                     <span class="dots2"></span>
@@ -264,41 +266,69 @@
                 pls tolong anyone bikin copywrite disini aing bingung gajago aduh intinya hey everyone ini ada pack pack yang bisa lo mainin gitu tinggal pilih sis ihik
             </p>
         </div>
+        
+        <div class="center text-center">
+            <button type="button" class="btn btn-outline-danger linkin margin-x" style="border-radius: 30px;text-transform: none; margin:0 1vw;" href="#icebreak">
+                Ice Break
+            </button>
 
-        <div class="row">
-            <div class="col-sm-12">
-                <div id="customers-testimonials2" class="owl-carousel owl-theme">
+            <button type="button" class="btn btn-outline-danger linkin padding" style="border-radius: 30px;text-transform: none; margin:0 1vw;" href="#mixnmatch">
+                Mix & Match
+            </button>
 
-                    <div class="item"style="margin-bottom: 0px;">
+            <button type="button" class="btn btn-outline-danger linkin padding" style="border-radius: 30px;text-transform: none; margin:0 1vw;" href="#digdeeper">
+                Dig Deeper
+            </button>
+
+            <button type="button" class="btn btn-outline-danger linkin padding" style="border-radius: 30px;text-transform: none; margin:0 1vw;" href="#lovebirds">
+                Lovebirds Edition
+            </button>
+
+            <button type="button" class="btn btn-outline-danger linkin padding" style="border-radius: 30px;text-transform: none; margin:0 1vw;" href="#stranger">
+                Stranger
+            </button>
+            <button type="button" class="btn btn-outline-danger linkin padding" style="border-radius: 30px;text-transform: none; margin:0 1vw;" href="#perspective">
+                Perspective
+            </button>
+        </div>
+
+        <div class="row padding-y">
+            <div class="col-lg-12">
+                <div id="cardpack-carousel" class="owl-carousel owl-theme">
+                    <div class="item"style="margin-bottom: 0px;" data-hash="icebreak">
                         <div class="shadow-effect">
-                            <img class="img-responsive center" src="{% static 'images/icebreak.svg' %}" style="width:89%;">
+                            <img class="img-responsive center cardpack" src="{% static 'images/icebreak.svg' %}" style="width:89%;">
                         </div>
                     </div>
                     
-                    <div class="item"style="margin-bottom: 0px;">
+                    <div class="item"style="margin-bottom: 0px;" data-hash="mixnmatch">
                         <div class="shadow-effect">
                             <img class="img-responsive center" src="{% static 'images/mixnmatch.svg' %}" style="width:89%;">
                         </div>
                     </div>
                     
-                    <div class="item"style="margin-bottom: 0px;">
+                    <div class="item"style="margin-bottom: 0px;" data-hash="digdeeper">
                         <div class="shadow-effect">
                             <img class="img-responsive center" src="{% static 'images/digdeeper.svg' %}" style="width:89%;">
                         </div>
                     </div>
                     
-                    <div class="item"style="margin-bottom: 0px;">
+                    <div class="item"style="margin-bottom: 0px;" data-hash="lovebirds">
                         <div class="shadow-effect">
                             <img class="img-responsive center" src="{% static 'images/lovebirds.svg' %}" style="width:89%;">
                         </div>
                     </div>
 
-                    <div class="item"style="margin-bottom: 0px;">
+                    <div class="item"style="margin-bottom: 0px;" data-hash="stranger">
                         <div class="shadow-effect">
                             <img class="img-responsive center" src="{% static 'images/stranger.svg' %}" style="width:89%;">
                         </div>
                     </div>
-
+                    <div class="item"style="margin-bottom: 0px;" data-hash="perspective">
+                        <div class="shadow-effect">
+                            <img class="img-responsive center" src="{% static 'images/stranger.svg' %}" style="width:89%;">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -306,7 +336,8 @@
             <button class="primary playNowButton center" >Play Now</button>
         </div> 
     </section>
-
+      
+    <a class="typeform-share button" href="https://form.typeform.com/to/LJzglif8?typeform-medium=embed-snippet" data-mode="popover" style="width:54px;height:54px;position:fixed;box-shadow:0px 2px 12px rgba(0, 0, 0, 0.06), 0px 2px 4px rgba(0, 0, 0, 0.08);right:26px;bottom:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;background:#DA2402;overflow:hidden;line-height:0;" target="_blank"> <span class="icon"> <svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' style="margin-top:6px;"> <path d='M21 0H0V9L10.5743 24V16.5H21C22.6567 16.5 24 15.1567 24 13.5V3C24 1.34325 22.6567 0 21 0ZM7.5 9.75C6.672 9.75 6 9.07875 6 8.25C6 7.42125 6.672 6.75 7.5 6.75C8.328 6.75 9 7.42125 9 8.25C9 9.07875 8.328 9.75 7.5 9.75ZM12.75 9.75C11.922 9.75 11.25 9.07875 11.25 8.25C11.25 7.42125 11.922 6.75 12.75 6.75C13.578 6.75 14.25 7.42125 14.25 8.25C14.25 9.07875 13.578 9.75 12.75 9.75ZM18 9.75C17.172 9.75 16.5 9.07875 16.5 8.25C16.5 7.42125 17.172 6.75 18 6.75C18.828 6.75 19.5 7.42125 19.5 8.25C19.5 9.07875 18.828 9.75 18 9.75Z' fill='white' /> </svg> </span> </a> <script> (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm_share", b="https://embed.typeform.com/"; if(!gi.call(d,id)){ js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })() </script>
 </div>
 
 
