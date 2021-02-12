@@ -1,7 +1,7 @@
 var numOfCard;
 var numOfCardOpened = 0;
 var noRepeatArray = [];
-var finalUrl;
+var finalUrl; var cardImage; var cardQuestion;
 
 function finishRedirect() {	
 	updateSession("gameStateOnGoing", "No");
@@ -83,6 +83,31 @@ $(document).ready(() => {
 		window.location.pathname = '/'
 	})
 
+	// $('#reportCard').click(function(e) {
+	// 	e.preventDefault()
+	// 	$.ajax({
+	// 		method: 'GET',
+	// 		url: 'report?' + 'question=' + cardQuestion,
+	// 		success: function(response) {
+	// 			if (response.success === false) {
+	// 				updateSession("gameStateOnGoing", "No")
+	// 				window.location = '/';
+
+	// 			} else {
+	// 				var cardJSONData = JSON.parse((response))
+
+	// 				if (numOfCardOpened == 1) {
+	// 					noRepeatArray = Array.from(Array(cardJSONData.length-1).keys());
+	// 					shuffle(noRepeatArray);
+	// 				}
+	// 				cardQuestion = cardJSONData[noRepeatArray[numOfCardOpened-1]].fields['question']
+	// 				cardImage = cardJSONData[noRepeatArray[numOfCardOpened-1]].fields['image'];
+	// 				$('#shownCard').attr('src', cardImage);
+	// 			}
+	// 		}
+
+	// })
+
 	$('#customers-testimonials').owlCarousel( {
 		loop: false,
 		
@@ -129,30 +154,6 @@ $(document).ready(() => {
 			}
 		}
 	});
-
-	// $('#customers-testimonials2').owlCarousel( {
-	// 	loop: true,
-	// 	center: true,
-	// 	items: 3,
-	// 	margin: 10,
-	// 	autoplay: true,
-	// 	dots:true,
-    // 	nav:true,
-	// 	autoplayTimeout: 8500,
-	// 	smartSpeed: 450,
-  	// 	navText: ['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>'],
-	// 	responsive: {
-	// 		0: {
-	// 			items: 1
-	// 		},
-	// 		768: {
-	// 			items: 2
-	// 		},
-	// 		1170: {
-	// 			items: 3
-	// 		}
-	// 	}
-	// });
 
 	$('#shownCard').tilt({
 		scale: 1.02,	
@@ -240,7 +241,8 @@ $(document).ready(() => {
 						noRepeatArray = Array.from(Array(cardJSONData.length-1).keys());
 						shuffle(noRepeatArray);
 					}
-					var cardImage = cardJSONData[noRepeatArray[numOfCardOpened-1]].fields['image'];
+					cardQuestion = cardJSONData[noRepeatArray[numOfCardOpened-1]].fields['question']
+					cardImage = cardJSONData[noRepeatArray[numOfCardOpened-1]].fields['image'];
 					$('#shownCard').attr('src', cardImage);
 				}
 			}

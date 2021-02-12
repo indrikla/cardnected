@@ -66,3 +66,6 @@ def updateSession(request):
 
 def feedback(request):
     return render(request, "feedback.html")
+
+def report(request):
+    return render(request, "report.html")

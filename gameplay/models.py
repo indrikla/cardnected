@@ -1,10 +1,6 @@
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
 
-CARDPACK_CHOICES = ( 
-    ("Dig Deeper", "Ice Break"),
-    ("Love Birds", "Mix & Match"), 
-) 
 # Create your models here.
 class DigDeeper1(models.Model):
     question = models.TextField('Question', max_length=400, null=True, blank=False)
@@ -85,6 +81,18 @@ class MixNMatch(models.Model):
 
     def __str__(self):
         return self.question
+
+# class Report(models.Model):
+#     pack = models.TextField('Card Pack', max_length=100, null=True, blank=False)
+#     question = models.TextField('Question', max_length=500, null=True, blank=False)
+
+
+#     class Meta:
+#         db_table = 'Report'
+
+#     def __str__(self):
+#         return "Report of " + self.question + " on " + self.pack + " pack."
+
 
 # class Player(models.Model):
 #     numberOfPlayer = models.IntegerField('Number of Players', default=2)

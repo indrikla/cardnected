@@ -19,11 +19,20 @@
 
             <div class=row>
                 
-                <div style="display:inline-block">
+                <div class="dropdown" style="display:inline-block">
+                    <a class="dropbtn">
+                        <h2 style=" margin-left: 2vw; color:whitesmoke" >...</h2>
+                    </a>
+                    <div class="dropdown-content">
+                        <a id="reportCard" class="link" href="{% url 'report' %}">Report</a>
+                    </div>
+                  </div>
+
+                <!-- <div style="display:inline-block">
                     <a class="link" href="https://www.instagram.com/">
                         <h2 style=" margin-left: 2vw;" >...</h2>
                     </a>
-                </div>
+                </div> -->
 
                 <div style="margin-left: auto; margin-right: 2vw;">
                     <span class="close">&times;</span>

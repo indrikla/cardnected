@@ -27,25 +27,26 @@
     </div>
 
     <section id="hero">
-        <div class="row">
+        <div class="col-lg-12 row">
             <div class="col-lg-7 padding-full margin rellax" data-rellax-speed="10">
-                <!-- <h1 class="title" style="font-size:4.5vw;">Build,<br>Strengthen,<br> <span id="anot">Stay connected.</span></h1>
-                <div class="col-lg-10 paddingless">
-                    <p class="header" style="font-size:1.5vw;">Removing Barriers to Social Connection through <span id="anot2">Meaningful Conversation</span></p>
-                </div> -->
+            
                 <h1 class="title herotext">Talk<br>to Anyone,<br> <span id="anot">Stay connected.</span></h1>
                 <div class="col-lg-12 paddingless">
                     <p class="header" style="letter-spacing: 0.010em;">The <span id="anot2">best conversation</span> starts with one good question.
                         <br><span class="bodytext"><i>Imagine you have an unlimited amount of it accessible <b>online</b>.</i></span>
                     </p>
                 </div>
+
                 <div style="display:inline-block;padding-top:1vw">
                     <button class="primary playNowButton" style="display:inline-block;">Play Now</button>
                 </div> 
+
             </div>
+
             <div class="col-lg-5  rellax pc-only" data-rellax-speed="7">
                 <div class="center">
                     <div class="stack">
+
                         <div class="cardd"> <img class="background card-shadow" src="{% static 'images/C1.png' %}" style="width: 91%;transform: rotate(-5deg)"> </div>
                         <div class="cardd"> <img class="background card-shadow" src="{% static 'images/C2.png' %}" style="width: 91%; transform: rotate(4deg)"> </div>
                         <div class="cardd"> <img class="background card-shadow"src="{% static 'images/C3.png' %}" style="width: 91%;"> </div>
@@ -56,6 +57,7 @@
                     </div>
                 </div>
             </div>
+
         </div>
 
         <div class="col-lg-12 background">
@@ -64,10 +66,11 @@
                 <lottie-player mode="bounce" class="center" src="https://assets2.lottiefiles.com/packages/lf20_4hht5fjk.json"  background="transparent"  speed="0.7"  style="width: 200px; margin-top:-10vw"  loop  autoplay></lottie-player>
             </div>
         </div>
+
     </section>
     
     <section id="about">
-        <div class="row margin">
+        <div class="col-lg-12 row margin">
             <div class="col-lg-6">
                 <h4 class=title><span style="color: maroon;"><u>about</u></span></h4>
                 <h1 class="title titletext"> The <span id="anot3">Card Game</span></h1>
@@ -88,7 +91,7 @@
 
     <section id="goals">
         <div class="margin" style=margin-top:10vw>
-            <div class="margin col-lg-12 relax text-center" data-rellax-speed="4">
+            <div class="col-lg-12 relax margin text-center" data-rellax-speed="4">
                 <h4 class=title><span style="color: maroon;"><u>our goals</u></span></h4>
                 <h1 class="title titletext"> what we’re trying to <span id="anot3">solve</span></h1>
                 <div class=center style="width:89%">
@@ -197,12 +200,12 @@
             <div class="col-lg-7">
                 <h4 class="title"><span style="color: maroon;"><u>the "rules"</u></span></h4>
                 <h1 class="title titletext"> how to <span id="anot3">play</span></h1>
-                <ul class="padding-y" style="padding-left:1vw">
+                <ul class="padding-y" style="padding-left:1vw;list-style:circle;">
                     <li>Ask anyone to join you to play the game together.</li>
                     <li>Set up any video conference call</li>
                     <li>Customize your game <a class="playNowButton">here</a>, then </li>
                     <li><u>Share your screen</u> so the other player can pick the cards</li>
-                    <span class=oliver>Enjoy the experience!</span>
+                    <span class=oliver><b>Enjoy the experience!</b></span>
                 </ul>
 
                 <p class="bodytext2">While the rules of the game are really <u>up to you</u>, we do have a few suggestions for how to play.</p>
@@ -219,7 +222,7 @@
                         
                                 </div>
                                 <div class="aks-accordion-item-title oliver titletext">
-                                    <h4 itemprop="name">Classic</h4>
+                                    <h4 itemprop="name"><b>Classic</b></h4>
                                 </div>
                             </div>
                             <div class="aks-accordion-item-content" itemscope itemprop="acceptedAnswer" data-accordion-content="">
@@ -239,7 +242,7 @@
                                     <path d="M492,236H20c-11.046,0-20,8.954-20,20c0,11.046,8.954,20,20,20h472c11.046,0,20-8.954,20-20S503.046,236,492,236z" /></svg>
                                 </div>
                                 <div class="aks-accordion-item-title oliver titletext">
-                                    <h4 itemprop="name">Popcorn</h4>
+                                    <h4 itemprop="name"><b>Popcorn</b></h4>
                                 </div>
                             </div>
                             <div class="aks-accordion-item-content" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer" data-accordion-content="">
@@ -267,34 +270,45 @@
             </p>
         </div>
         
-        <div class="center text-center">
-            <button type="button" class="btn btn-outline-danger linkin margin-x" style="border-radius: 30px;text-transform: none; margin:0 1vw;" href="#icebreak">
-                Ice Break
-            </button>
+        <div class="col-lg-12 center text-center">
+            <div class="kotak">
+                <button type="button" class="btn btn-outline-danger linkin padding" style="border-radius: 30px;text-transform: none; margin:0 1vw;" href="#icebreak">
+                    Ice Break
+                </button>
+            </div>
 
-            <button type="button" class="btn btn-outline-danger linkin padding" style="border-radius: 30px;text-transform: none; margin:0 1vw;" href="#mixnmatch">
-                Mix & Match
-            </button>
+            <div class="kotak">
+                <button type="button" class="btn btn-outline-danger linkin padding" style="border-radius: 30px;text-transform: none; margin:0 1vw;" href="#mixnmatch">
+                    Mix & Match
+                </button>
+            </div>
+            <div class="kotak">
+                <button type="button" class="btn btn-outline-danger linkin padding" style="border-radius: 30px;text-transform: none; margin:0 1vw;" href="#digdeeper">
+                    Dig Deeper
+                </button>
+            </div>
+            <div class="kotak">
+                <button type="button" class="btn btn-outline-danger linkin padding" style="border-radius: 30px;text-transform: none; margin:0 1vw;" href="#lovebirds">
+                    Lovebirds Edition
+                </button>
+            </div>
+            <div class="kotak">
+                <button type="button" class="btn btn-outline-danger linkin padding" style="border-radius: 30px;text-transform: none; margin:0 1vw;" href="#stranger">
+                    Stranger
+                </button>
+            </div>
+            <div class="kotak">
+                <button type="button" class="btn btn-outline-danger linkin padding" style="border-radius: 30px;text-transform: none; margin:0 1vw;" href="#perspective">
+                    Perspective
+                </button>
+            </div>
 
-            <button type="button" class="btn btn-outline-danger linkin padding" style="border-radius: 30px;text-transform: none; margin:0 1vw;" href="#digdeeper">
-                Dig Deeper
-            </button>
-
-            <button type="button" class="btn btn-outline-danger linkin padding" style="border-radius: 30px;text-transform: none; margin:0 1vw;" href="#lovebirds">
-                Lovebirds Edition
-            </button>
-
-            <button type="button" class="btn btn-outline-danger linkin padding" style="border-radius: 30px;text-transform: none; margin:0 1vw;" href="#stranger">
-                Stranger
-            </button>
-            <button type="button" class="btn btn-outline-danger linkin padding" style="border-radius: 30px;text-transform: none; margin:0 1vw;" href="#perspective">
-                Perspective
-            </button>
         </div>
 
         <div class="row padding-y">
             <div class="col-lg-12">
                 <div id="cardpack-carousel" class="owl-carousel owl-theme">
+
                     <div class="item"style="margin-bottom: 0px;" data-hash="icebreak">
                         <div class="shadow-effect">
                             <img class="img-responsive center cardpack" src="{% static 'images/icebreak.svg' %}" style="width:89%;">
@@ -324,17 +338,21 @@
                             <img class="img-responsive center" src="{% static 'images/stranger.svg' %}" style="width:89%;">
                         </div>
                     </div>
+
                     <div class="item"style="margin-bottom: 0px;" data-hash="perspective">
                         <div class="shadow-effect">
-                            <img class="img-responsive center" src="{% static 'images/stranger.svg' %}" style="width:89%;">
+                            <img class="img-responsive center" src="{% static 'images/perspective.svg' %}" style="width:89%;">
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
+
         <div class="center text-center" style="padding-top:1vw">
             <button class="primary playNowButton center" >Play Now</button>
         </div> 
+
     </section>
       
     <a class="typeform-share button" href="https://form.typeform.com/to/LJzglif8?typeform-medium=embed-snippet" data-mode="popover" style="width:54px;height:54px;position:fixed;box-shadow:0px 2px 12px rgba(0, 0, 0, 0.06), 0px 2px 4px rgba(0, 0, 0, 0.08);right:26px;bottom:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;background:#DA2402;overflow:hidden;line-height:0;" target="_blank"> <span class="icon"> <svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' style="margin-top:6px;"> <path d='M21 0H0V9L10.5743 24V16.5H21C22.6567 16.5 24 15.1567 24 13.5V3C24 1.34325 22.6567 0 21 0ZM7.5 9.75C6.672 9.75 6 9.07875 6 8.25C6 7.42125 6.672 6.75 7.5 6.75C8.328 6.75 9 7.42125 9 8.25C9 9.07875 8.328 9.75 7.5 9.75ZM12.75 9.75C11.922 9.75 11.25 9.07875 11.25 8.25C11.25 7.42125 11.922 6.75 12.75 6.75C13.578 6.75 14.25 7.42125 14.25 8.25C14.25 9.07875 13.578 9.75 12.75 9.75ZM18 9.75C17.172 9.75 16.5 9.07875 16.5 8.25C16.5 7.42125 17.172 6.75 18 6.75C18.828 6.75 19.5 7.42125 19.5 8.25C19.5 9.07875 18.828 9.75 18 9.75Z' fill='white' /> </svg> </span> </a> <script> (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm_share", b="https://embed.typeform.com/"; if(!gi.call(d,id)){ js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })() </script>

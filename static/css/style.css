@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
-@import url(https://allfont.net/allfont.css?fonts=oliver);
 @import url('https://fonts.googleapis.com/css2?family=Gaegu:wght@300;400;700&display=swap');
 
 html {
@@ -161,8 +160,9 @@ border-radius: 28.4074px;
     display: block;
 }
 .oliver {
-    font-family: 'Oliver', arial;
-    font-size: clamp(12px, 2vw, 18vw)
+    font-family: 'Gaegu', cursive;
+    font-weight: 900;
+    font-size: clamp(15px, 2vw, 22vw)
 }
 
 .gaegu {
@@ -512,6 +512,9 @@ button {
     .mobile {
         display: block;
     }
+    .kotak {
+        display: grid;
+    }
 }
 /* <1200 */
 @media (max-width: 1200px) {
@@ -528,3 +531,61 @@ button {
         display: none;
     }
 }
+footer {
+    background: radial-gradient(182.68% 59.98% at 50% 50%, #BB231F 0%, #F0332E 100%);
+}
+ul {
+    padding:0;
+    list-style: none;
+}
+.footer-social-icons {
+    width: 350px;
+    display:block;
+    margin: 0 auto;
+}
+.social-icon {
+    color: #fff;
+}
+ul.social-icons {
+    margin-top: 10px;
+}
+.social-icons li {
+    vertical-align: top;
+    display: inline;
+    height: 100px;
+    padding-left: 1.4vw;
+    padding-right: 1.4vw;
+}
+.social-icons a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.kotak {
+    width: 165px;
+    height: 42px;
+    display: inline;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    border-radius: 12px;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: #ddd;}
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {display: block;}
