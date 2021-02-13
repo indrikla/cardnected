@@ -4,4 +4,5 @@ from . import views
 
 urlpatterns = [
     path('', views.cardpack, name= 'cardpack'),
+    path('<int:index>/', views.detail, name="detail"),
 ]

@@ -80,15 +80,6 @@ border-radius: 28.4074px;
     padding-right: 0%;
 }
 
-.scrollie {
-    width: 1280px;
-    height: 480px;
-    overflow: hidden;
-    overflow-y: scroll;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-}
-
 .margin-2 {
     margin:2vw;
 }
@@ -530,7 +521,11 @@ button {
     .mobile {
         display: none;
     }
+    .pc-only {
+        display: block;
+    }
 }
+
 footer {
     background: radial-gradient(182.68% 59.98% at 50% 50%, #BB231F 0%, #F0332E 100%);
 }
@@ -589,3 +584,13 @@ ul.social-icons {
   
   /* Show the dropdown menu on hover */
   .dropdown:hover .dropdown-content {display: block;}
+
+  ::-moz-selection {
+    background-color: hsl(0, 64%, 50%);
+    color: #fff;
+    }
+    
+    ::selection {
+    background-color: hsl(0, 64%, 50%);
+    color: #fff;
+    }

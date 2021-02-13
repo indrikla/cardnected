@@ -12,23 +12,30 @@
 {% block content%}
 
 <div class="container">
+
     <div class="background pc-only">
         <div class="background ">
-            <img id="buletGede" src="{% static 'images/a.png' %}" style="position: absolute; width: 44%; top:0; right:0;" 
-            class="background rellax" data-rellax-speed="12">
+            <img id="buletGede" src="{% static 'images/bigBolb.png' %}" style="position: absolute; width: 44%; top:0; right:0;" 
+            class="background rellax" data-rellax-speed="-3">
         </div>
     </div>
 
     <div class="background ">
         <div class="background" style="position: absolute; top:0; left:0;">
-            <img src="{% static 'images/aa.png' %}" style="width: 99%;" 
-            class=" rellax" data-rellax-speed="-6">
+            <img src="{% static 'images/smallBolb.png' %}" style="width: 99%;" 
+            class="rellax" data-rellax-speed="-6">
+        </div>
+    </div>
+
+    <div class="background">
+        <div class="background" style="position: absolute; top:368px; left:0;">
+            <img src="{% static 'images/blush.png' %}" style="width: 100%;">
         </div>
     </div>
 
     <section id="hero">
         <div class="col-lg-12 row">
-            <div class="col-lg-7 padding-full margin rellax" data-rellax-speed="10">
+            <div class="col-lg-7 padding-full margin rellax" data-rellax-speed="2">
             
                 <h1 class="title herotext">Talk<br>to Anyone,<br> <span id="anot">Stay connected.</span></h1>
                 <div class="col-lg-12 paddingless">
@@ -43,7 +50,7 @@
 
             </div>
 
-            <div class="col-lg-5  rellax pc-only" data-rellax-speed="7">
+            <div class="col-lg-5 rellax pc-only" data-rellax-speed="0">
                 <div class="center">
                     <div class="stack">
 
@@ -61,7 +68,7 @@
         </div>
 
         <div class="col-lg-12 background">
-            <div class=" rellax" data-rellax-speed="5">
+            <div class=" rellax" data-rellax-speed="-1">
                 <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
                 <lottie-player mode="bounce" class="center" src="https://assets2.lottiefiles.com/packages/lf20_4hht5fjk.json"  background="transparent"  speed="0.7"  style="width: 200px; margin-top:-10vw"  loop  autoplay></lottie-player>
             </div>
@@ -73,7 +80,7 @@
         <div class="col-lg-12 row margin">
             <div class="col-lg-6">
                 <h4 class=title><span style="color: maroon;"><u>about</u></span></h4>
-                <h1 class="title titletext"> The <span id="anot3">Card Game</span></h1>
+                <h1 class="title titletext"id="anot3" style="display: inline;">card<span style="font-weight: 300;">nected</span></h1>
                 <p class="padding-y" style="line-height: 172%;letter-spacing: 0.010em;">
                     <span class="title bodytext">cardnected</span> is a <i>"conversation card"</i> 
                     game  platform  with sets of deep questions 
@@ -91,7 +98,7 @@
 
     <section id="goals">
         <div class="margin" style=margin-top:10vw>
-            <div class="col-lg-12 relax margin text-center" data-rellax-speed="4">
+            <div class="col-lg-12 margin text-center">
                 <h4 class=title><span style="color: maroon;"><u>our goals</u></span></h4>
                 <h1 class="title titletext"> what we’re trying to <span id="anot3">solve</span></h1>
                 <div class=center style="width:89%">
@@ -262,7 +269,7 @@
     </section>
     
     <section id="cardpack" style="margin-top: 10vw;">
-        <div class="col-lg-12 relax text-center" data-rellax-speed="4">
+        <div class="col-lg-12 text-center">
             <h4 class=title><span style="color: maroon;"><u>collection</u></span></h4>
             <h1 class="title titletext">Card Pack</h1>
             <p class=padding-y>
@@ -272,33 +279,33 @@
         
         <div class="col-lg-12 center text-center">
             <div class="kotak">
-                <button type="button" class="btn btn-outline-danger linkin padding" style="border-radius: 30px;text-transform: none; margin:0 1vw;" href="#icebreak">
+                <button type="button" class="btn btn-outline-danger linkin padding" style="border-radius: 30px;text-transform: none; margin:0 1vw;" href="#IceBreak">
                     Ice Break
                 </button>
             </div>
 
             <div class="kotak">
-                <button type="button" class="btn btn-outline-danger linkin padding" style="border-radius: 30px;text-transform: none; margin:0 1vw;" href="#mixnmatch">
+                <button type="button" class="btn btn-outline-danger linkin padding" style="border-radius: 30px;text-transform: none; margin:0 1vw;" href="#MixNMatch">
                     Mix & Match
                 </button>
             </div>
             <div class="kotak">
-                <button type="button" class="btn btn-outline-danger linkin padding" style="border-radius: 30px;text-transform: none; margin:0 1vw;" href="#digdeeper">
+                <button type="button" class="btn btn-outline-danger linkin padding" style="border-radius: 30px;text-transform: none; margin:0 1vw;" href="#DigDeeper">
                     Dig Deeper
                 </button>
             </div>
             <div class="kotak">
-                <button type="button" class="btn btn-outline-danger linkin padding" style="border-radius: 30px;text-transform: none; margin:0 1vw;" href="#lovebirds">
+                <button type="button" class="btn btn-outline-danger linkin padding" style="border-radius: 30px;text-transform: none; margin:0 1vw;" href="#Lovebirds">
                     Lovebirds Edition
                 </button>
             </div>
             <div class="kotak">
-                <button type="button" class="btn btn-outline-danger linkin padding" style="border-radius: 30px;text-transform: none; margin:0 1vw;" href="#stranger">
+                <button type="button" class="btn btn-outline-danger linkin padding" style="border-radius: 30px;text-transform: none; margin:0 1vw;" href="#Stranger">
                     Stranger
                 </button>
             </div>
             <div class="kotak">
-                <button type="button" class="btn btn-outline-danger linkin padding" style="border-radius: 30px;text-transform: none; margin:0 1vw;" href="#perspective">
+                <button type="button" class="btn btn-outline-danger linkin padding" style="border-radius: 30px;text-transform: none; margin:0 1vw;" href="#Perspective">
                     Perspective
                 </button>
             </div>
@@ -308,42 +315,16 @@
         <div class="row padding-y">
             <div class="col-lg-12">
                 <div id="cardpack-carousel" class="owl-carousel owl-theme">
-
-                    <div class="item"style="margin-bottom: 0px;" data-hash="icebreak">
+                    {% csrf_token %}
+                    {% for pack in pack %}
+                    <div class="item"style="margin-bottom: 0px;" data-hash="{{ pack.pack }}">
                         <div class="shadow-effect">
-                            <img class="img-responsive center cardpack" src="{% static 'images/icebreak.svg' %}" style="width:89%;">
+                            <a class="linkin" href="pack/{{ pack.id }}">
+                                <img class="img-responsive center cardpack" src="{{ pack.image }}" style="width:89%;">
+                            </a>
                         </div>
                     </div>
-                    
-                    <div class="item"style="margin-bottom: 0px;" data-hash="mixnmatch">
-                        <div class="shadow-effect">
-                            <img class="img-responsive center" src="{% static 'images/mixnmatch.svg' %}" style="width:89%;">
-                        </div>
-                    </div>
-                    
-                    <div class="item"style="margin-bottom: 0px;" data-hash="digdeeper">
-                        <div class="shadow-effect">
-                            <img class="img-responsive center" src="{% static 'images/digdeeper.svg' %}" style="width:89%;">
-                        </div>
-                    </div>
-                    
-                    <div class="item"style="margin-bottom: 0px;" data-hash="lovebirds">
-                        <div class="shadow-effect">
-                            <img class="img-responsive center" src="{% static 'images/lovebirds.svg' %}" style="width:89%;">
-                        </div>
-                    </div>
-
-                    <div class="item"style="margin-bottom: 0px;" data-hash="stranger">
-                        <div class="shadow-effect">
-                            <img class="img-responsive center" src="{% static 'images/stranger.svg' %}" style="width:89%;">
-                        </div>
-                    </div>
-
-                    <div class="item"style="margin-bottom: 0px;" data-hash="perspective">
-                        <div class="shadow-effect">
-                            <img class="img-responsive center" src="{% static 'images/perspective.svg' %}" style="width:89%;">
-                        </div>
-                    </div>
+                    {% endfor %}
 
                 </div>
             </div>
@@ -398,7 +379,7 @@
         }, 700);
     }
 
-//    var rellax = new Rellax('.rellax');
+    var rellax = new Rellax('.rellax');
 
     (function () {
         "use strict";

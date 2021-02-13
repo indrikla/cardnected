@@ -83,6 +83,19 @@ $(document).ready(() => {
 		window.location.pathname = '/'
 	})
 
+	// $('.protip').protip({
+	// 	position: 'top right',
+	// 	anchor: 'mouse',
+	// 	offset: [10, -10],
+	// 	tip: 'next',
+	// 	showEvents: 'mouseenter',
+	// 	hideEvents: 'mouseleave',
+	// 	onBeforeShow: null,
+	// 	onShow: null,
+	// 	onBeforeHide: null,
+	// 	onHide: null
+	// });
+
 	// $('#reportCard').click(function(e) {
 	// 	e.preventDefault()
 	// 	$.ajax({

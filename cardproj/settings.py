@@ -80,6 +80,22 @@ WSGI_APPLICATION = 'cardproj.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'Cardnected DATABASE',
+#         'USER': 'admin',
+#         'PASSWORD': 'admin',
+#         'HOST': 'localhost',
+#         'PORT': '5432',
+#     }
+# }
+# DATABASES = {
+#     'default': dj_database_url.config(
+#         default='postgres://admin:admin@localhost:5432/card'
+#         )}
+
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',

@@ -1,5 +1,7 @@
 from django.shortcuts import render
+from cardpack.models import *
 
 # Create your views here.
 def home(request):
-    return render(request, "home.html")
+    pack = Pack.objects.all()
+    return render(request, "home.html", {'pack': pack})

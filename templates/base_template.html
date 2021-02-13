@@ -11,7 +11,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <!-- <link rel="stylesheet" href="//gitcdn.link/repo/wintercounter/Protip/master/protip.min.css"> -->
+
     <meta name="google-site-verification" content="v49_Xf0jBBIJx8y-3rCYsVccH0Z2qznhjx-LfY0j4iM" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
     <title>cardnected</title>
@@ -65,6 +67,32 @@
     </nav>
   </div>
 
+{% block content %}
+{% endblock %}
+
+<footer class="py-5" style="margin-top: 10vw;">
+  </div>
+    <div class="container text-center"style="color:white">
+		<img src="{% static 'images/logogram.svg' %}" style="vertical-align:top; margin-bottom: 3vw;">
+		<p>Supported by:</p>
+		<img src="{% static 'images/recloud.svg' %}" style="margin-top: 1vw;margin-bottom: 1.5vw;display:block" class="center">
+		<div style=" margin-bottom: 3vw;">
+			<img src="{% static 'images/alibaba.svg' %}" >
+			<img src="{% static 'images/codepolitan.svg' %}" >
+		</div>
+		<p class="gaegu text-center" >created with 👁💧👅💧👁 by <b style="font-weight: 700;">indrikla</b></p>
+		<div class="col-md-4 col-sm-6 col-xs-12 center">
+			<ul class="social-icons center">
+				<li><a href="https://www.linkedin.com/in/indrikla/" class="social-icon link"> <i class="fa fa-linkedin"></i></a></li>
+				<li><a href="mailto:indriklarissa@gmail.com" class="social-icon link"> <i class="fa fa-envelope"></i></a></li>
+				<li><a href="https://t.me/indrikla" class="social-icon link"> <i class="fa fa-telegram"></i></a></li>
+				<li><a href="https://www.youtube.com/channel/UCtVIx1pJFe5iWOSjgnCnOrg/videos" class="social-icon link"> <i class="fa fa-youtube-play"></i></a></li>
+				<li><a href="https://www.instagram.com/indrikla/" class="social-icon link"> <i class="fa fa-instagram"></i></a></li>
+			</ul>
+        </div>
+    </div>
+  </footer>
+  
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script  src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.0.3/tilt.jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
@@ -77,32 +105,7 @@
   <script src="https://cdnout.com/rough-notation/rough-notation.iife.min.js"></script>
   <script src="  https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
   <script src="https://use.fontawesome.com/dd1dcb8781.js"></script>
-  
+  <!-- <script src="//gitcdn.link/repo/wintercounter/Protip/master/protip.min.js"></script> -->
 
-
-{% block content %}
-{% endblock %}
-
-<footer class="py-5" style="margin-top: 10vw;">
-    <div class="container text-center"style="color:white">
-		<img src="{% static 'images/logogram.svg' %}" style="vertical-align:top; margin-bottom: 3vw;">
-		<p>Supported by:</p>
-		<img src="{% static 'images/recloud.svg' %}" style="margin-top: 1vw;margin-bottom: 1.5vw;display:block" class="center">
-		<div style=" margin-bottom: 3vw;">
-			<img src="{% static 'images/alibaba.svg' %}" >
-			<img src="{% static 'images/codepolitan.svg' %}" >
-		</div>
-		<p class=" text-center" >created with 💪(👁💧👅💧👁)✊ by indrikla</p>
-		<div class="col-md-4 col-sm-6 col-xs-12 center">
-			<ul class="social-icons center">
-				<li><a href="https://www.linkedin.com/in/indrikla/" class="social-icon link"> <i class="fa fa-linkedin"></i></a></li>
-				<li><a href="mailto:indriklarissa@gmail.com" class="social-icon link"> <i class="fa fa-envelope"></i></a></li>
-				<li><a href="https://t.me/indrikla" class="social-icon link"> <i class="fa fa-telegram"></i></a></li>
-				<li><a href="https://www.youtube.com/channel/UCtVIx1pJFe5iWOSjgnCnOrg/videos" class="social-icon link"> <i class="fa fa-youtube-play"></i></a></li>
-				<li><a href="https://www.instagram.com/indrikla/" class="social-icon link"> <i class="fa fa-instagram"></i></a></li>
-			</ul>
-        </div>
-    </div>
-  </footer>
 </body>
 </html>

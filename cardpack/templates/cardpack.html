@@ -14,83 +14,17 @@
 
 <div class="container center">
 
-    <div>
-        <img class="background"src="{% static 'images/aaaa.png' %}" style="position: absolute; width: 44%; top:0; right:0;">
-    </div>
-
-    <div class="row ">
-        <div class="col-lg-10 scrollie center"  style="display: inline-block;">
-            <div class="scrollbar" id="style-3">
-                <section id="breaktheice">
-                    <div class="row" >
-                        <div class="col-lg-5 padding-full" style="display: inline;">
-                            <img class="cardpack center" src="{% static 'images/breaktheice.svg' %}" style="width: 78%;">
-                        </div>
-            
-                        <div class="col-lg-7 padding-full margin" style="display: inline;">
-                            <div style="top:0;">
-                                <h1 class="title" style="font-size:3.5vw;">“Break the Ice” <span class="gaegu">pack</span></h1>    
-                                <div class="padding-full">
-                                    <p >Provide a game card conversation platform in order to build a new, or strengthen an existing connection</p>    
-                                    <button type="button" class="btn btn-outline-danger">Primary</button>
-                                    <button type="button" class="btn btn-outline-danger">Primary</button>
-                                    <div style="margin-top: 2vw;">
-                                        <h3 class="gaegu"><u>Take a <b>Sneakpeek!</b></u></h3>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </section>
-            
-                <section id="lovebirds">
-                    <div class="row">
-                        <div class="col-lg-5 padding-full" style="display: inline;">
-                            <img class="cardpack center" src="{% static 'images/breaktheice.svg' %}" style="width: 78%;">
-                        </div>
-            
-                        <div class="col-lg-7 padding-full margin" style="display: inline;">
-                            <h1 class="title" style="font-size:3.5vw;">“Break the Ice” <span class="gaegu">pack</span></h1>    
-                            <div class="padding-full">
-                                <p >Provide a game card conversation platform in order to build a new, or strengthen an existing connection</p>    
-                                <button type="button" class="btn btn-outline-danger">Primary</button>
-                                <button type="button" class="btn btn-outline-danger">Primary</button>
-                                <div style="margin-top: 2vw;">
-                                    <h3 class="gaegu"><u>Take a <b>Sneakpeek!</b></u></h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                </div>
+    <div class="margin col-lg-12 center">
+        <div class="row">
+            {% csrf_token %}
+            {% for pack in pack %}
+                <a class="linkin center" href="{{ pack.id }}"><img class="center img-responsive" src="{{ pack.image }}" style="width:300px; height:auto; margin:1vw 1vw 1vw 1vw"/></a>
+            {% endfor %}
         </div>
-
-        <div class="col-lg-2" style="display: inline-block;">
-            <div id="list-example " class="list-group center">
-                <a class="list-group-item list-group-item-action center" href="#breaktheice">“Break the Ice”</a>
-                <a class="list-group-item list-group-item-action center" href="#lovebirds">Item2</a>
-                <a class="list-group-item list-group-item-action center" href="#list-item-3">Item 3</a>
-                <a class="list-group-item list-group-item-action center" href="#list-item-4">Item 4</a>
-            </div>
-        </div>
-
+        
     </div>
 
     
 </div>
-
-<script>
-    $('.js-tilt').tilt({
-        scale: 1.2,
-        glare: true,
-        maxGlare: .11
-    })
-
-    $('.cardpack').tilt({
-        glare: true,
-    })
-
-</script>
 
 {% endblock content %}
