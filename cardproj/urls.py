@@ -22,4 +22,5 @@ urlpatterns = [
     path('pack/', include('cardpack.urls')),
     path('play/', include('gameplay.urls')),
     path('creator/', include('creator.urls')),
+    path('', include('login.urls')),
 ]

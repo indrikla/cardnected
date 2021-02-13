@@ -49,7 +49,11 @@
 
           <ul class="navbar-nav justify-content-center" >
             <li class="nav-item">
-              <button class="nav-link round padding-x" href="#" style="padding-left: 2vw; padding-right:2vw"> SIGN IN </button>
+				{% if user.is_authenticated %}
+              		<button class="nav-link round padding-x" href="{% url 'login' %}" style="padding-left: 2vw; padding-right:2vw"> LOG OUT </button>
+				{% else %}
+					<button class="nav-link round padding-x" href="{% url 'login' %}" style="padding-left: 2vw; padding-right:2vw"> LOG IN </button>
+				{% endif %}
             </li>
           </ul>
         </div>
