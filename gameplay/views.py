@@ -68,4 +68,22 @@ def feedback(request):
     return render(request, "feedback.html")
 
 def report(request):
-    return render(request, "report.html")
+    data = {'success': False} 
+    if request.method == 'POST':
+        pack = request.POST.get('pack')
+        issue = request.POST.get('issue')
+        desc = request.POST.get('desc')
+        if 'questionID' in request.session.keys() and 'question' in request.session.keys():
+            Report.objects.create(question = request.session['question'], questionID = request.session['questionID'], pack = pack, report = issue, desc = desc)
+            data['success'] = True
+            return JsonResponse(data, safe=False)
+        else :
+            return JsonResponse(data, safe=False)
+
+    elif request.method == 'GET':
+        questionID = request.GET.get('id')
+        question = request.GET.get('question')
+
+        request.session['questionID'] = questionID
+        request.session['question'] = question
+        return render(request, 'report.html')

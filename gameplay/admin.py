@@ -41,3 +41,8 @@ class StrangerAdmin(admin.ModelAdmin):
 class MixNMatchAdmin(admin.ModelAdmin):
     list_display = ('id', 'question', 'image')
     search_fields = ('question', 'image')
+
+@admin.register(models.Report)
+class ReportAdmin(admin.ModelAdmin):
+    list_display = ('report', 'pack', 'questionID', 'question', 'desc')
+    search_fields = ('report', 'question', 'pack')

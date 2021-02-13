@@ -1,5 +1,5 @@
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include, re_path
 from . import views
 
 urlpatterns = [
@@ -8,5 +8,5 @@ urlpatterns = [
     path('openCard', views.openCard, name='openCard'),
     path('updateSession', views.updateSession, name='updateSession'),
     path('feedback', views.feedback, name='feedback'),
-    path('report', views.report, name='report'),
+    re_path(r'^report/$', views.report, name='report'),
 ]

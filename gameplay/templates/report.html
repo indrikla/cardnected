@@ -12,37 +12,43 @@
 {% block content%}
 <div class="container" style="overflow: hidden;">
 
-	<div class="col-lg-12 margin">
+	<div class="col-lg-6 margin center">
         <div class=text-center>
             <h2 class="title"> Report an issue </h2>
-            <h5>Help us understand the problem. What is going on with the card?</h5>
+            <h6>Help us understand the problem. What is going on with the card?</h6>
         </div>
-        <div class="center margin">
-            <div style="display: block;">
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        I don't like the question
-                    </label>
+        
+        <div class="padding-y center">
+            <form action="" method="POST">
+                {% csrf_token %}
+
+                <div class="form-group">
+                    <label for="Issue">Issue</label>
+                    <select  class="form-control" id="issueForm" required>
+                        <option disabled selected value value=""> -- select an option -- </option>
+                        <option id="report1">I don't like the question</option>
+                        <option id ="report2">It's disrespectful or offensive</option>
+                        <option id="report3">The question doesn't seem to fit the pack</option>
+                        <option id="reportOther">Other...</option>
+                    </select>
                 </div>
 
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                    <label class="form-check-label" for="flexRadioDefault2">
-                        It's disrespectful or offensive
-                    </label>
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Please tell us more</label>
+                    <textarea class="form-control" id="descForm" rows="3"></textarea>
                 </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
-                    <label class="form-check-label" for="flexRadioDefault3">
-                        The question doesn't seem to fit the pack
-                    </label>
-                </div>
-            </div>
+
+                {% csrf_token %}
+                <button class="button primary protip" id="formReport" style="float: right;">Send</button>
+            </form>
+
+
         </div>
-
-
 	</div>
 </div>
-
+<script type="text/javascript">
+    window.onbeforeunload = function() {
+        return "Are you sure you want to leave?";
+    }
+</script>
 {% endblock content %}

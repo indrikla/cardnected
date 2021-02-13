@@ -1,7 +1,8 @@
 var numOfCard;
 var numOfCardOpened = 0;
 var noRepeatArray = [];
-var finalUrl; var cardImage; var cardQuestion;
+var finalUrl;
+var cardImage; var cardQuestion; var cardIndex; var cardID;
 
 function finishRedirect() {	
 	updateSession("gameStateOnGoing", "No");
@@ -83,43 +84,47 @@ $(document).ready(() => {
 		window.location.pathname = '/'
 	})
 
-	// $('.protip').protip({
-	// 	position: 'top right',
-	// 	anchor: 'mouse',
-	// 	offset: [10, -10],
-	// 	tip: 'next',
-	// 	showEvents: 'mouseenter',
-	// 	hideEvents: 'mouseleave',
-	// 	onBeforeShow: null,
-	// 	onShow: null,
-	// 	onBeforeHide: null,
-	// 	onHide: null
-	// });
+	$('#reportCard').click(function(e) {
+		e.preventDefault()
 
-	// $('#reportCard').click(function(e) {
-	// 	e.preventDefault()
-	// 	$.ajax({
-	// 		method: 'GET',
-	// 		url: 'report?' + 'question=' + cardQuestion,
-	// 		success: function(response) {
-	// 			if (response.success === false) {
-	// 				updateSession("gameStateOnGoing", "No")
-	// 				window.location = '/';
+		$.ajax({
+			method: 'GET',
+			url: 'report?' + 'id=' + cardID + '&question=' + cardQuestion,
+			success: function(data) {
+			}
+		})
+	})
 
-	// 			} else {
-	// 				var cardJSONData = JSON.parse((response))
-
-	// 				if (numOfCardOpened == 1) {
-	// 					noRepeatArray = Array.from(Array(cardJSONData.length-1).keys());
-	// 					shuffle(noRepeatArray);
-	// 				}
-	// 				cardQuestion = cardJSONData[noRepeatArray[numOfCardOpened-1]].fields['question']
-	// 				cardImage = cardJSONData[noRepeatArray[numOfCardOpened-1]].fields['image'];
-	// 				$('#shownCard').attr('src', cardImage);
-	// 			}
-	// 		}
-
-	// })
+	$('#formReport').click(function(e) {
+		var issue = $('#issueForm').val();
+		var desc = $('#descForm').val();
+		console.log("masuk")
+		e.preventDefault()
+		$.ajax({
+			method: 'POST',
+			data: {
+                pack: sessionStorage.getItem("pack"),
+				issue: issue,
+				desc: desc,
+               'csrfmiddlewaretoken': $('input[name=csrfmiddlewaretoken]').val()
+            },
+			url: '',
+			success: function(data) {
+				if (data['success']) {
+					$('#descForm').empty();
+					$('#issueForm').empty();
+					alert("[SUCCESS] Thank you for letting us know! Enjoy your game! (This tab will close automatically)")
+					window.top.close();
+				} else {
+					$('#descForm').empty();
+					$('#issueForm').empty();
+					alert("Oops! I think there's a problem... Please try again. (This tab will close automatically)")
+					window.top.close();
+				}
+			}
+		})
+	})
+	
 
 	$('#customers-testimonials').owlCarousel( {
 		loop: false,
@@ -254,9 +259,12 @@ $(document).ready(() => {
 						noRepeatArray = Array.from(Array(cardJSONData.length-1).keys());
 						shuffle(noRepeatArray);
 					}
-					cardQuestion = cardJSONData[noRepeatArray[numOfCardOpened-1]].fields['question']
-					cardImage = cardJSONData[noRepeatArray[numOfCardOpened-1]].fields['image'];
-					$('#shownCard').attr('src', cardImage);
+					cardIndex = noRepeatArray[numOfCardOpened-1];
+					cardID = cardJSONData[cardIndex].pk
+					cardQuestion = cardJSONData[cardIndex].fields['question'];
+					cardImage = cardJSONData[cardIndex].fields['image'];
+					$('#shownCard').attr('src', cardImage)
+
 				}
 			}
 				
@@ -412,6 +420,7 @@ $(document).ready(() => {
 	})
 
 	$('.nav-link').click(function (event) {
+		$(this).addClass("active");
 		if (sessionStorage.getItem("gameStateOnGoing") != undefined) {
 
 			if (sessionStorage.getItem("gameStateOnGoing") === "Yes" && window.location.pathname === '/play/') {
@@ -447,20 +456,5 @@ $(document).ready(() => {
 	$('.linkin').click(function (e){
 		window.location = ($(this).attr('href'))
 	})
-
-	// $(window).on("beforeunload", function(e) { 
-	// 	updateSession("gameStateOnGoing", "No")
-
-	// 	// if (window.location.pathname === '/play/') {
-	// 	// 	return confirm("Do you really want to close?"); 
-	// 	// 	// console.log(conf)
-	// 	// 	// if (conf == true) {
-	// 	// 	// 	updateSession("gameStateOnGoing", "No")
-	// 	// 	// } else {
-
-	// 	// 	// }
-	// 	// }
-        
-    // });
 
 })

@@ -49,21 +49,23 @@
             <div class="row" >
                 
                 <div class="col-lg-5 padding-full" style="display: inline;">
-                    <img class="img-responsive center" src="{{ pack.image }}" style="width:300px; height:auto"/>
+                    <img class="img-responsive center" src="{{ pack.image }}" style="width:300px; height:auto; margin-bottom:5vw"/>
                 </div>
     
                 <div class="col-lg-6 padding-full" style="display: inline;">
                     <div style="top:0;">
                         <h1 class="title">“{{ pack.name }}” <span class="gaegu">pack</span></h1>    
-                        <div class="padding-full">
-                            <p >{{ pack.description }}</p>    
+                        <div>
+                            <p>{{ pack.description|linebreaks }}</p>    
                             <div style="margin-top: 2vw;">
                                 <h3 class="title"><u>Take a <b>Sneakpeek!</b></u></h3>
-                                <ul class="gaegu" style="font-size: 18px;list-style: circle;"><b>
-                                    <li> "{{ pack.q1}}" </li>
-                                    <li> "{{ pack.q2}}" </li>
-                                    <li> "{{ pack.q3}}" </li>
-                                </b>
+                                <div>
+                                    <ul class="gaegu" style="font-size: 18px;list-style: circle;"><b>
+                                        <li> "{{ pack.q1}}" </li>
+                                        <li> "{{ pack.q2}}" </li>
+                                        <li> "{{ pack.q3}}" </li>
+                                    </b>
+                                </div>
                                 </ul>
                             </div>
                         </div>
