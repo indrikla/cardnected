@@ -14,11 +14,40 @@
 
 <div class="container center">
 
-    <div class="row margin">
-        <div class="col-lg-12 center">
+    <div class="margin">
+        <div class="col-lg-12">
             <a class=linkin href="{% url 'cardpack' %}"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
-            <div class="row" >
+            <div style="display: inline-block;margin-left: 5vw;">
+                <button type="button" class="btn btn-outline-danger linkin padding" style="border-radius: 30px;text-transform: none; margin:0 1vw;" href="/pack/1/">
+                    Ice Break
+                </button>
+    
+                <button type="button" class="btn btn-outline-danger linkin padding" style="border-radius: 30px;text-transform: none; margin:0 1vw;" href="/pack/5/">
+                    Mix & Match
+                </button>
+    
+                <button type="button" class="btn btn-outline-danger linkin padding" style="border-radius: 30px;text-transform: none; margin:0 1vw;" href="/pack/2">
+                    Dig Deeper
+                </button>
+    
+                <button type="button" class="btn btn-outline-danger linkin padding" style="border-radius: 30px;text-transform: none; margin:0 1vw;" href="/pack/3">
+                    Lovebirds Edition
+                </button>
+    
+                <button type="button" class="btn btn-outline-danger linkin padding" style="border-radius: 30px;text-transform: none; margin:0 1vw;" href="/pack/4/">
+                    Stranger
+                </button>
+    
+                <button type="button" class="btn btn-outline-danger linkin padding" style="border-radius: 30px;text-transform: none; margin:0 1vw;" href="/pack/6/">
+                    Perspective
+                </button>
+     
+            </div>
+        </div>
+        <div class="col-lg-12 center margin">
             
+            <div class="row" >
+                
                 <div class="col-lg-5 padding-full" style="display: inline;">
                     <img class="img-responsive center" src="{{ pack.image }}" style="width:300px; height:auto"/>
                 </div>
@@ -28,7 +57,6 @@
                         <h1 class="title">“{{ pack.name }}” <span class="gaegu">pack</span></h1>    
                         <div class="padding-full">
                             <p >{{ pack.description }}</p>    
-                            <!-- <button type="button" class="btn btn-outline-danger">Two Player</button> -->
                             <div style="margin-top: 2vw;">
                                 <h3 class="title"><u>Take a <b>Sneakpeek!</b></u></h3>
                                 <ul class="gaegu" style="font-size: 18px;list-style: circle;"><b>
