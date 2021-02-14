@@ -30,7 +30,10 @@ def signup(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
-            return redirect('/signup')
+            return redirect('/')
+        # else :
+        #     message = 'Oopsie! Sign Up failed. Please try again'
+        #     return render(request, 'signup.html', { 'message' : message })
     else:
         form = UserCreationForm()
-    return render(request, "registration.html", {'form': form})
+    return render(request, "signup.html", {'form': form})

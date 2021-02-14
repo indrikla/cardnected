@@ -123,7 +123,9 @@
 
 </div>
 <script type="text/javascript">
-    window.onbeforeunload = function() {
+
+    window.onbeforeunload = function(e) {
+        e.preventDefault();
         updateSession("gameStateOnGoing", "No")
         sessionStorage.clear()
         return "Are you sure you want to leave?";

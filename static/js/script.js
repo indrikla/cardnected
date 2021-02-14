@@ -209,7 +209,7 @@ $(document).ready(() => {
 	})
 
 	window.onclick = function(event) {
-		event.preventDefault();
+		// event.preventDefault();
 		if (event.target == modal) {
 			modal.style.display = "none";
 			if (numOfCardOpened == sessionStorage.getItem("numOfCard") && modal.style.display != "block") {
@@ -226,6 +226,9 @@ $(document).ready(() => {
 	})
   
 	$('.js-tilt').click(function(event) {
+		event.preventDefault();
+		window.onbeforeunload = null;
+		$(window).bind("beforeunload", function(){ return(false); });
 		$(this).css('transition', 'transform 0.8s')
 		$(this).css('transform-style', 'preserve-3d')
 		$(this).css('transform', 'rotateY(180deg)')
@@ -393,20 +396,35 @@ $(document).ready(() => {
   	})
 
 	$('#showCard').click(function (event) {
-		var numOfCard = sessionStorage.getItem("numOfCard")
-		if (numOfCard == 12) {
-			$("#gamePlace12").toggleClass("hidden");
-		} else if (numOfCard == 16) {
-			$("#gamePlace16").toggleClass("hidden");
-		} else if (numOfCard == 20) {
-			$("#gamePlace20").toggleClass("hidden");
+		event.preventDefault();
+		if (sessionStorage.getItem("gameStateOnGoing") != undefined) {
+
+			if (sessionStorage.getItem("gameStateOnGoing") === "Yes") {
+				var numOfCard = sessionStorage.getItem("numOfCard")
+				if (numOfCard == 12) {
+					$("#gamePlace12").toggleClass("hidden");
+				} else if (numOfCard == 16) {
+					$("#gamePlace16").toggleClass("hidden");
+				} else if (numOfCard == 20) {
+					$("#gamePlace20").toggleClass("hidden");
+				}
+			} else {
+				alert("Oops! There's something wrong here... You'll be directed to the form page")
+				window.location = '/play'
+			}
+		} else {
+			alert("Oops! There's something wrong here... You'll be directed to the form page")
+			window.location = '/play'
 		}
+		
+
 	})
 
 
 
 	$('#finishButton').click(function (event) {
 		event.preventDefault();
+		window.onbeforeunload = null;
 		var alertPopUp = confirm("Oops! You haven't picked all the cards yet. Are you sure you want to finish the game?");
 	
 			if (alertPopUp == true) {
@@ -416,17 +434,21 @@ $(document).ready(() => {
 
 	$('#terminateLink').click(function (event) {
 		event.preventDefault()
+		window.onbeforeunload = null;
 		sessionStorage.clear()
 		window.location = '/'
 	})
 
 	$('.nav-link').click(function (event) {
+		event.preventDefault();
+		window.onbeforeunload = null;
 		$(this).addClass("active");
 		if (sessionStorage.getItem("gameStateOnGoing") != undefined) {
 
 			if (sessionStorage.getItem("gameStateOnGoing") === "Yes" && window.location.pathname === '/play/') {
+				
 				var alertPopUp = confirm("Oops! You still have a game going on. Do you wish to terminate the game?");
-	
+				
 				if (alertPopUp == true) {
 					event.preventDefault();
 					updateSession("gameStateOnGoing", "No")

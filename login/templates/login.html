@@ -24,10 +24,12 @@
 			<form action="{% url 'login' %}" method="POST">
 					{% csrf_token %}
 					{{ form.as_table }}
-					<button type="submit" value="Login" class="primary linkin">LogIn </button>
+                    <input id="loginForm" type="submit" value="Log In" style="background-color: rgba(218, 42, 42, 0.979); color:white" >
+
+					<!-- <button id="loginForm" type="submit" value="Login" class="primary linkin" >Log In</button> -->
 			</form>
 			</p>
-			<p> Don't have an account yet? Register <a class=linkin href="{% url 'signup' %}">here</a> </p>
+			<p> Don't have an account yet? Register <a class="" href="{% url 'signup' %}">here</a> </p>
 		</div>
 	  </div>
   </div>

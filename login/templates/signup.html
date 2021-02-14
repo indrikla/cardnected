@@ -10,7 +10,7 @@
 
 		<div class="center" style="text-align: center; margin:2vw">
 			<p id="logout"> do you want to logout? </p>
-			<a class=linkin href="{% url 'logout' %}">
+			<a class="" href="{% url 'logout' %}">
 				<button class="linkin btn btn-primary active" id="logout2">Logout</button>
 			</a>
 		</div>
@@ -20,21 +20,23 @@
   {% else %}
 
   <div class="margin col-lg-12">
-    <h1 class="title text-center"> <span>Login</span></h1>
+    <h1 class="title text-center"> <span>Sign Up</span></h1>
 	<div class="login-page center">
 		<div class="login-form center">
 			<form action="{% url 'signup' %}" method="POST" class=center>
 					{% csrf_token %}
 					{{ form.as_table }}
-					<button type="submit" value="Login" class="primary linkin">LogIn </button>
+                    <input type="submit" value="Sign Up" style="background-color: rgba(218, 42, 42, 0.979); color:white" >
 			</form>
 
-			<p> Have an account? Log In <a class=linkin href="{% url 'login' %}">here</a> </p>
+			<p> Have an account? Log In <a class="" href="{% url 'login' %}">here</a> </p>
 		</div>
 	  </div>
   </div>
   {% endif %}
 
 </div>
-
+<!-- <script>
+    alert('{{ message }}');
+</script> -->
 {% endblock content %}
