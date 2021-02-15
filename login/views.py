@@ -13,7 +13,7 @@ def loginFunc(request):
         if form.is_valid():
             user = form.get_user()
             login(request, user)
-            return redirect('/login')
+            return redirect('/')
     else:
         form = AuthenticationForm()
     return render(request, "login.html", {'form': form})

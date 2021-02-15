@@ -4,13 +4,13 @@
 
 {% block content %}
 <div class="container">
-    <!-- <div class="background pc-only">
+    <div class="background">
         <div class="background ">
-            <img id="buletGede" src="{% static 'images/blush2.png' %}" style="position: absolute; width: 44%; top:0; right:0;" 
+            <img id="buletGede" src="{% static 'images/mangkok2.png' %}" style="width:100%;position: absolute; top:0; right:0;left:0;" 
             class="background rellax" data-rellax-speed="-3">
         </div>
     </div>
-
+    
   {% if user.is_authenticated %}
   	<div class="margin col-lg-12">
 		<h3 class="title" style="margin-top:4vw;">You're <span>Logged</span> In :-D </h3>
@@ -27,7 +27,7 @@
   {% else %}
 
   <div class="margin col-lg-12">
-    <h1 class="title text-center"> <span>Sign Up</span></h1>
+    <h1 class="title text-center herotext"> <span>Sign Up</span></h1>
 	<div class="login-page center">
 		<div class="login-form center">
 			<form action="{% url 'signup' %}" method="POST" class=center>

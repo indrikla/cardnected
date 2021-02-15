@@ -152,8 +152,7 @@ $(document).ready(() => {
 	});
 
 	$('#cardpack-carousel').owlCarousel( {
-		lazyLoad: true,
-		items: 3,
+		items: 1,
 		loop: true,
 		center: true,
 		margin: 10,
