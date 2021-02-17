@@ -219,7 +219,7 @@ $(document).ready(() => {
 				$(this).css('border-radius', '0')
 		})
 	}
-  
+
 	var modal = document.getElementById("myModal");
 	$('.close').click(function(event) {
 		event.preventDefault();
@@ -231,9 +231,10 @@ $(document).ready(() => {
 	})
 	$('.modal-close').click(function(event) {
 		console.log('kena lo')
-		// event.preventDefault();
-		if (numOfCardOpened == sessionStorage.getItem("numOfCard") || $('.modal-window').css('visibility') == "hidden") {
-			console.log('MASHOK')
+		
+		if (numOfCardOpened == sessionStorage.getItem("numOfCard")) {
+			$('.js-tilt').replaceWith('<div class="padding-y"><img src="/static/images/empty.svg" style="width: 300px; max-height: 300px;margin-bottom:2vw;"></div>') 	
+
 			setTimeout(alertPopUp, 2000);
 			setTimeout(finishRedirect, 3000);
 		}
@@ -275,20 +276,19 @@ $(document).ready(() => {
 			$(this).css('transition', 'transform 0.8s')
 			$(this).css('transform-style', 'preserve-3d')
 			$(this).css('transform', 'rotateY(360deg)')
-			// $(this.children[0].children[0]).css('color', '#0000')
-			// console.log(this.children[0].children[0])
-			// console.log(this.children[0].parents)
 		}
 
 		
 		numOfCardOpened++;
-		console.log(numOfCardOpened + " dari " + sessionStorage.getItem("numOfCard"))
-		
+
 		if (sessionStorage.getItem('Players') == 'Two') {
 			player = (numOfCardOpened % 2 != 0) ? sessionStorage.getItem("firstPlayer") : sessionStorage.getItem("secondPlayer");
 			$('.playerTurn').text(player);
 		} else if (sessionStorage.getItem('Players') == 'Multi'){
 			$('.multiHide').css('display', 'none');
+			if ($(window).width() < 768) {
+				$('.shownCard').removeClass('center');
+			}
 		}
 
 		$.ajax({
