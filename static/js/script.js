@@ -219,7 +219,7 @@ $(document).ready(() => {
 				$(this).css('border-radius', '0')
 		})
 	}
-  
+
 	var modal = document.getElementById("myModal");
 	$('.close').click(function(event) {
 		event.preventDefault();
@@ -289,6 +289,7 @@ $(document).ready(() => {
 			$('.playerTurn').text(player);
 		} else if (sessionStorage.getItem('Players') == 'Multi'){
 			$('.multiHide').css('display', 'none');
+			$('.shownCard').removeAttr('class', 'center');
 		}
 
 		$.ajax({
