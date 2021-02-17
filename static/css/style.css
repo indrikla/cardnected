@@ -526,6 +526,17 @@ button {
     }
 }
 
+@media (min-width: 768px) {
+  .modal-pc-only {
+    display:block;
+  }
+}
+@media (max-width: 768px) {
+  .modal-mobile {
+    display:none;
+  }
+}
+
 footer {
     background: radial-gradient(182.68% 59.98% at 50% 50%, #BB231F 0%, #F0332E 100%);
 }
@@ -759,3 +770,70 @@ ul.social-icons {
         font-size: clamp(11px, 2vw, 13px);
         list-style-type:none;
       }
+
+.roung {
+  position: absolute;
+  right: 177px;
+  top: 322px;
+
+}
+@media (max-width: 1024px) {
+  .roung {
+    position: absolute;
+    right: 57px;
+    top: 277px;
+  }
+}
+@media (max-width: 1080px) {
+  .roung {
+    position: absolute;
+    right: 77px;
+    top: 290px;
+  }
+}
+@media (max-width: 1080px) {
+  .roung {
+    position: absolute;
+    right: 55px;
+    top: 277px;
+  }
+}
+
+@media (max-width: 1195px) {
+  #maste {
+    margin-left: 6vw;
+  }
+}
+
+.modal-window{
+  position: fixed; /* Stay in place */
+  z-index: 100; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(88, 88, 88); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.295); /* Black w/ opacity */
+  visibility:hidden;
+  transition:all 0.3s;
+}
+.modal-window:target{visibility:visible;opacity:1;pointer-events:auto}
+.modal-window>div{
+  width:100%;
+  height: auto;
+  max-width: 900px;
+  position:absolute;top:25%;
+  transform:rotate(90deg);
+  padding:2em;
+  background: radial-gradient(100% 100% at 0% 0%, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 100%);
+  box-shadow: inset -2.84073px -2.84073px 142.037px rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(23.8622px);}
+
+.modal-window header{font-weight:bold}
+.modal-window h1{font-size:150%;margin:0 0 15px}
+.modal-close{color:#727272;line-height:50px;font-size:111%;position:absolute;right:0;text-align:center;top:0;width:70px;text-decoration:none}
+.modal-close:hover{color:black}
+.modal-window>div{border-radius:1rem}
+.modal-window div:not(:last-of-type){margin-bottom:15px}
+small{color:lightgray}

@@ -1,19 +1,19 @@
-<svg width="153" height="34" viewBox="0 0 153 34" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="411" height="91" viewBox="0 0 411 91" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g filter="url(#filter0_d)">
-<rect x="1" width="151" height="31.3766" fill="url(#pattern0)"/>
-<mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="1" y="0" width="151" height="32">
-<rect x="1" width="151" height="31.3766" fill="url(#pattern1)"/>
+<rect x="2.64404" y="0.0473633" width="405.691" height="84.2995" fill="url(#pattern0)"/>
+<mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="2" y="0" width="407" height="85">
+<rect x="2.64404" y="0.0473633" width="405.691" height="84.2995" fill="url(#pattern1)"/>
 </mask>
 <g mask="url(#mask0)">
-<rect x="34.9917" y="-0.000488281" width="129.646" height="31.3766" fill="#F0F0F0"/>
+<rect x="93.9692" y="0.0454102" width="348.321" height="84.2995" fill="#F0F0F0"/>
 </g>
 </g>
 <defs>
-<filter id="filter0_d" x="0.128427" y="0" width="152.743" height="33.7735" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter0_d" x="0.302392" y="0.0473633" width="410.374" height="90.739" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
-<feOffset dy="1.52525"/>
-<feGaussianBlur stdDeviation="0.435786"/>
+<feOffset dy="4.09789"/>
+<feGaussianBlur stdDeviation="1.17083"/>
 <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
 <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
 <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>

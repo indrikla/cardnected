@@ -26,7 +26,7 @@
                     <div class="dropdown-content">
                         <a id="reportCard" class="link" href="{% url 'report' %}">Report</a>
                     </div>
-                  </div>
+                </div>
 
                 <div style="margin-left: auto; margin-right: 2vw;">
                     <span class="close">&times;</span>
@@ -34,13 +34,13 @@
 
             </div>
 
-            <p id="multiHide"class="center gaegu" style="font-size:3vw;font-weight:400; padding-bottom:1vw"> <b><u><span id="playerTurn"></span></u></b>'s turn to answer</p>
-            <img id="shownCard" class="center card-shadow lazy" src="#" style="width: 55%;" >
+            <p class="center gaegu multiHide" style="font-size:3vw;font-weight:400; padding-bottom:1vw"> <b><u><span class="playerTurn"></span></u></b>'s turn to answer</p>
+            <img id="shownCard" class="center card-shadow lazy shownCard" src="#" style="width: 55%;" >
             <!-- <lottie-player id="loader" src="https://assets9.lottiefiles.com/datafiles/dCoEZJcl8sFV0r4/data.json"  background="transparent"  speed="1"  style="width: 200px; height: 200px;"  loop  autoplay></lottie-player> -->
             <!-- <p class="center gaegu" style="font-size:1.5vw;font-weight:500; padding-top:0.5vw"> Helptext here</p> -->
         
         </div>
-      
+    
     </div>
 
     <div class="background">
@@ -49,16 +49,56 @@
         </div>
     </div>
     
-    <div class="background">
+    <div class="background pc-only">
         <div class="background" style="position: absolute; top:368px; left:0;">
             <img src="{% static 'images/blush.png' %}" style="width: 100%;">
         </div>
     </div>
+    
+<!-- MOBILE -->
+    <div id="open-modal" class="modal-window">
+        <div>
+            <a href="#" title="Close" class="modal-close">
+                <i class="fa fa-times-circle" aria-hidden="true"></i>
+            </a>
+            <p class="center text-center gaegu multiHide" style="font-size:3vw;font-weight:400;"> <b><u><span class="playerTurn"></span></u></b>'s turn to answer</p>
+            <img id="shownCard" class="center card-shadow lazy shownCard" src="#" 
+            style="width: 90%;" >
+        </div>
+    </div>
 
-    <div class="col-lg-12 padding-full center margin text-center">
+    <div class="col-lg-12 padding-full center margin text-center mobile">
+        <div class="js-tilt padding-y" style="margin-top: 10vw;margin-bottom: 5vw;">
+            <a href="#open-modal">
+                <lottie-player class="center"src="https://assets8.lottiefiles.com/private_files/lf30_bozsm8dp.json"  background="transparent"  speed="2"  style="width: 90%;" autoplay loop  ></lottie-player>
+            </a>
+        </div>
+    </div>
+    <div class="margin mobile center">
+        <button id=finishButton style="background-color:#3d3d3d" class="button center">Finish</button>
+    </div>
+
+
+    <!-- <div class="mobile">
+        <div class="interior">
+            <a class="btn" href="#open-modal">👋 Basic CSS-Only Modal</a>
+        </div>
+        <div id="open-modal" class="modal-window">
+            <div>
+                <a href="#" title="Close" class="modal-close">Close</a>
+                <h1>Voilà!</h1>
+                <div>A CSS-only modal based on the :target pseudo-class. Hope you find it helpful.</div>
+                    <div><small>Check out</small></div>
+                <a href="https://aminoeditor.com" target="_blank">👉 Amino: Live CSS Editor for Chrome
+            </div>
+        </div>
+    </div> -->
+    
+    <div class="col-lg-12 padding-full center margin text-center pc-only">
         <h1 class="title" style="font-size:6vw;">GamePlay</h1>
         <h5 class="gaegu center" style="font-weight:500;"> Please select a card too see the question</h5>
         <b><a class="oliver" id="showCard" href="#" >Show Cards</a></b>
+
         <div id=maste class=centerr>
             <div id="gamePlace12" class="row hidden" style="margin-left: 2.5vw;">
                 <div class="js-tilt padding-y"><lottie-player src="https://assets8.lottiefiles.com/private_files/lf30_bozsm8dp.json"  background="transparent"  speed="2"  style="width: 250px; height: 250px;" hover loop  ></lottie-player></div>
@@ -115,6 +155,7 @@
                 <div class="js-tilt padding-y"><lottie-player src="https://assets8.lottiefiles.com/private_files/lf30_bozsm8dp.json"  background="transparent"  speed="2"  style="width: 250px; height: 250px;" hover loop  ></lottie-player></div>
             </div>
         </div>
+
         <div class=margin>
             <button id=finishButton style="margin-left:79%;background-color:#3d3d3d" class="button">Finish</button>
         </div>

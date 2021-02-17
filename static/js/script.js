@@ -128,9 +128,32 @@ $(document).ready(() => {
 
 	$('#customers-testimonials').owlCarousel( {
 		loop: false,
-		
 		center: false,
 		items: 3,
+		margin: 30,
+		autoplay: true,
+		dots:true,
+    	nav:true,
+		autoplayTimeout: 8500,
+		smartSpeed: 450,
+  		navText: ['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>'],
+		responsive: {
+			0: {
+				items: 1
+			},
+			768: {
+				items: 2
+			},
+			1170: {
+				items: 3
+			}
+		}
+	});
+	
+	$('#cardHero').owlCarousel( {
+		loop: true,
+		center: true,
+		items: 1,
 		margin: 30,
 		autoplay: true,
 		dots:true,
@@ -173,29 +196,29 @@ $(document).ready(() => {
 		}
 	});
 
-	$('#shownCard').tilt({
-		scale: 1.02,	
-	})
-
-	$('.js-tilt').tilt({
-		scale: 1.2,
-		glare: true,
-		maxGlare: .11
-	})
-
-	$('.img-responsive').tilt({
-		scale: 1.2,
-		glare: true,
-		maxGlare: .11
-	})
-
-	$('.img-responsive').hover(function() {
-		$(this).css('border-radius', '10px');
-		}, function() { 
-			$(this).css('border-radius', '0')
-		});
-
+	if( $(window).width() > 992) {
+		$('#shownCard').tilt({
+			scale: 1.02,	
+		})
 	
+		$('.js-tilt').tilt({
+			scale: 1.2,
+			glare: true,
+			maxGlare: .11
+		})
+	
+		$('.img-responsive').tilt({
+			scale: 1.2,
+			glare: true,
+			maxGlare: .11
+		})
+	
+		$('.img-responsive').hover(function() {
+			$(this).css('border-radius', '10px');
+			}, function() { 
+				$(this).css('border-radius', '0')
+		})
+	}
   
 	var modal = document.getElementById("myModal");
 	$('.close').click(function(event) {
@@ -206,9 +229,17 @@ $(document).ready(() => {
 			setTimeout(finishRedirect, 3000);
 		}
 	})
+	$('.modal-close').click(function(event) {
+		console.log('kena lo')
+		// event.preventDefault();
+		if (numOfCardOpened == sessionStorage.getItem("numOfCard") || $('.modal-window').css('visibility') == "hidden") {
+			console.log('MASHOK')
+			setTimeout(alertPopUp, 2000);
+			setTimeout(finishRedirect, 3000);
+		}
+	})
 
 	window.onclick = function(event) {
-		// event.preventDefault();
 		if (event.target == modal) {
 			modal.style.display = "none";
 			if (numOfCardOpened == sessionStorage.getItem("numOfCard") && modal.style.display != "block") {
@@ -225,27 +256,40 @@ $(document).ready(() => {
 	})
   
 	$('.js-tilt').click(function(event) {
-		event.preventDefault();
-		window.onbeforeunload = null;
-		$(window).bind("beforeunload", function(){ return(false); });
-		$(this).css('transition', 'transform 0.8s')
-		$(this).css('transform-style', 'preserve-3d')
-		$(this).css('transform', 'rotateY(180deg)')
 
-		// $(this).removeClass("js-tilt")
-		// $(this).children("lottie-player").replaceWith('<img src="/static/images/empty.svg" style="width: 240px; max-height: 240px;">') 
-		$(this).replaceWith('<div class="padding-y"><img src="/static/images/empty.svg" style="width: 250px; max-height: 250px;"></div>') 
+		if ($(window).width() > 768) {
+			event.preventDefault();
+			window.onbeforeunload = null;
+			$(window).bind("beforeunload", function(){ return(false); });
+			$(this).css('transition', 'transform 0.8s')
+			$(this).css('transform-style', 'preserve-3d')
+			$(this).css('transform', 'rotateY(180deg)')
+	
+			$(this).replaceWith('<div class="padding-y"><img src="/static/images/empty.svg" style="width: 250px; max-height: 250px;"></div>') 	
+			modal.style.display = "block";
 
-
-		modal.style.display = "block";
-		numOfCardOpened++;
-		if (sessionStorage.getItem('Players') == 'Two') {
-			player = (numOfCardOpened % 2 != 0) ? sessionStorage.getItem("firstPlayer") : sessionStorage.getItem("secondPlayer");
-			$('#playerTurn').text(player);
-		} else if (sessionStorage.getItem('Players') == 'Multi'){
-			$('#multiHide').css('display', 'none');
+		} else {
+			
+			window.onbeforeunload = null;
+			$(window).bind("beforeunload", function(){ return(false); });
+			$(this).css('transition', 'transform 0.8s')
+			$(this).css('transform-style', 'preserve-3d')
+			$(this).css('transform', 'rotateY(360deg)')
+			// $(this.children[0].children[0]).css('color', '#0000')
+			// console.log(this.children[0].children[0])
+			// console.log(this.children[0].parents)
 		}
 
+		
+		numOfCardOpened++;
+		console.log(numOfCardOpened + " dari " + sessionStorage.getItem("numOfCard"))
+		
+		if (sessionStorage.getItem('Players') == 'Two') {
+			player = (numOfCardOpened % 2 != 0) ? sessionStorage.getItem("firstPlayer") : sessionStorage.getItem("secondPlayer");
+			$('.playerTurn').text(player);
+		} else if (sessionStorage.getItem('Players') == 'Multi'){
+			$('.multiHide').css('display', 'none');
+		}
 
 		$.ajax({
 			method: 'GET',
@@ -262,20 +306,18 @@ $(document).ready(() => {
 						noRepeatArray = Array.from(Array(cardJSONData.length-1).keys());
 						shuffle(noRepeatArray);
 					}
+					$(this).css('transform', 'rotateY(-360deg)');
 					cardIndex = noRepeatArray[numOfCardOpened-1];
 					cardID = cardJSONData[cardIndex].pk
 					cardQuestion = cardJSONData[cardIndex].fields['question'];
 					cardImage = cardJSONData[cardIndex].fields['image'];
-					$('#shownCard').attr('src', cardImage)
+					$('.shownCard').attr('src', cardImage)
 
 				}
 			}
 				
 		})
 
-		if (numOfCardOpened == numOfCard && modal.style.display != "block") {
-			alert("udah selese")
-		}
 	})
 
   $('#numOfPlayer').on('change', function (event) {

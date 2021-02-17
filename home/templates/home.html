@@ -33,7 +33,7 @@
         </div>
     </div>
 
-    <div class="background ">
+    <div class="background pc-only">
         <div class="background" style="position: absolute; top:1400px;left:0;">
             <img src="{% static 'images/bigbg.svg' %}" style="width: 100%;" 
             class="rellax" data-rellax-speed="-3">
@@ -43,6 +43,12 @@
         <div class="background" style="position: absolute; top:1788px;left:-100px;">
             <img src="{% static 'images/bola.png' %}" style="width: 80%;" 
             class="rellax" data-rellax-speed="-1">
+        </div>
+    </div>
+
+    <div class="background ">
+        <div class="background">
+            <img class="roung"src="{% static 'images/roung.svg' %}">
         </div>
     </div>
     <!-- <div class="background ">
@@ -68,7 +74,7 @@
 
             </div>
 
-            <div class="col-lg-5 rellax" data-rellax-speed="0">
+            <div class="col-lg-5 rellax pc-only" data-rellax-speed="0">
                 <div class="center">
                     <div class="stack">
 
@@ -82,13 +88,54 @@
                     </div>
                 </div>
             </div>
-
         </div>
 
         <div class="col-lg-12 background">
-            <div class=" rellax" data-rellax-speed="-1">
+            <div class=" rellax pc-only" data-rellax-speed="-1">
                 <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
                 <lottie-player mode="bounce" class="center" src="https://assets2.lottiefiles.com/packages/lf20_4hht5fjk.json"  background="transparent"  speed="0.7"  style="width: 200px; margin-top:-10vw"  loop  autoplay></lottie-player>
+            </div>
+        </div>
+        <div class="col-lg-12 background">
+            <div class=" rellax mobile" data-rellax-speed="2">
+                <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                <lottie-player mode="bounce" class="center" src="https://assets2.lottiefiles.com/packages/lf20_4hht5fjk.json"  background="transparent"  speed="0.7"  style="width: 200px; margin-top:-22vw"  loop  autoplay></lottie-player>
+            </div>
+        </div>
+        <div class="row mobile rellax" data-rellax-speed="2">
+            <div id="cardHero" class="owl-carousel owl-theme" style="margin-top: -7vw;">
+
+                <div class="item"style="margin-bottom: 0px;">
+                    <div class="shadow-effect">
+                        <img class="img-responsive" src="{% static 'images/C1.png' %}">
+                    </div>
+                </div>
+                <div class="item"style="margin-bottom: 0px;">
+                    <div class="shadow-effect">
+                        <img class="img-responsive" src="{% static 'images/C2.png' %}">
+                    </div>
+                </div>
+                <div class="item"style="margin-bottom: 0px;">
+                    <div class="shadow-effect">
+                        <img class="img-responsive" src="{% static 'images/C3.png' %}">
+                    </div>
+                </div>
+                <div class="item"style="margin-bottom: 0px;">
+                    <div class="shadow-effect">
+                        <img class="img-responsive" src="{% static 'images/C4.png' %}">
+                    </div>
+                </div>
+                <div class="item"style="margin-bottom: 0px;">
+                    <div class="shadow-effect">
+                        <img class="img-responsive" src="{% static 'images/C5.png' %}">
+                    </div>
+                </div>
+                <div class="item"style="margin-bottom: 0px;">
+                    <div class="shadow-effect">
+                        <img class="img-responsive" src="{% static 'images/C6.png' %}">
+                    </div>
+                </div>
+
             </div>
         </div>
 
@@ -101,7 +148,7 @@
                 <h1 class="title titletext"id="anot3" style="display: inline;">card<span style="font-weight: 300;">nected</span></h1>
                 <p class="padding-y" style="line-height: 172%;letter-spacing: 0.010em;">
                     <span class="title bodytext">cardnected</span> is a <i>"conversation card"</i> 
-                    game  platform  with sets of deep questions 
+                    game  platform  providing sets of deep questions 
                     designed to build up a valuable experience by creating a meaningful conversation.
                     <br><br>
                         We aim to <u>remove the barriers</u> to building new or strengthening the existing social connections online, <b><i>Enabling Happiness and Productivity at Home #StayAtHome.</i></b>
@@ -225,7 +272,7 @@
             <div class="col-lg-7">
                 <h4 class="title"><span style="color: maroon;"><u>the "rules"</u></span></h4>
                 <h1 class="title titletext"> how to <span id="anot3">play</span></h1>
-                <ul class="padding-y" style="padding-left:1vw;list-style:circle;">
+                <ul class="padding-y" style="padding-left:1vw;list-style:decimal">
                     <li>Ask anyone to join you to play the game together.</li>
                     <li>Set up any video conference call</li>
                     <li>Customize your game <a class="playNowButton">here</a>, then </li>
@@ -398,9 +445,10 @@
             stack.prepend(cardd);
         }, 700);
     }
-
-    var rellax = new Rellax('.rellax');
-
+    if( $(window).width() > 992) {
+        var rellax = new Rellax('.rellax');
+    }
+    
     (function () {
         "use strict";
         var jQueryPlugin = (window.jQueryPlugin = function (ident, func) {
