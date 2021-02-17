@@ -289,7 +289,7 @@ $(document).ready(() => {
 			$('.playerTurn').text(player);
 		} else if (sessionStorage.getItem('Players') == 'Multi'){
 			$('.multiHide').css('display', 'none');
-			$('.shownCard').removeAttr('class', 'center');
+			$('.shownCard').removeClass('center');
 		}
 
 		$.ajax({
