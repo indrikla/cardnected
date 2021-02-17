@@ -20,7 +20,7 @@
         <div class="row">
             {% csrf_token %}
             {% for pack in pack %}
-                <a class="linkin center" href="{{ pack.id }}"><img class="center img-responsive" src="{{ pack.image }}" style="width:66%; width:300px; height:auto; margin:1vw 1vw 1vw 1vw"/></a>
+                <a class="linkin center" href="{{ pack.id }}"><img class="center img-responsive lazy" src="{{ pack.image }}" style="width:66%; width:300px; height:auto; margin:1vw 1vw 1vw 1vw"/></a>
             {% endfor %}
         </div>
         
