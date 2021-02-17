@@ -9,7 +9,7 @@ def gameplay(request):
     # request.session['gameStateOnGoing'] = "No"
     if 'gameStateOnGoing' in request.session.keys():
         if(request.session['gameStateOnGoing'] == "Yes"):
-            return render(request, "gameplay.html")
+            return render(request, "gameplay.min.html")
     return redirect(form)
 
 def form(request):
@@ -24,7 +24,7 @@ def form(request):
         return JsonResponse(data, safe=False)
 
     elif request.method == 'GET':
-        return render(request, "form.html")
+        return render(request, "form.min.html")
 
 def openCard(request):
     if (request.GET.get('pack') == "DigDeeper1"):
@@ -65,7 +65,7 @@ def updateSession(request):
     return HttpResponse("ok")
 
 def feedback(request):
-    return render(request, "feedback.html")
+    return render(request, "feedback.min.html")
 
 def report(request):
     data = {'success': False} 
@@ -86,4 +86,4 @@ def report(request):
 
         request.session['questionID'] = questionID
         request.session['question'] = question
-        return render(request, 'report.html')
+        return render(request, 'report.min.html')

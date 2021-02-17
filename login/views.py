@@ -16,7 +16,7 @@ def loginFunc(request):
             return redirect('/')
     else:
         form = AuthenticationForm()
-    return render(request, "login.html", {'form': form})
+    return render(request, "login.min.html", {'form': form})
 
 
 def logoutFunc(request):
@@ -36,4 +36,4 @@ def signup(request):
         #     return render(request, 'signup.html', { 'message' : message })
     else:
         form = UserCreationForm()
-    return render(request, "signup.html", {'form': form})
+    return render(request, "signup.min.html", {'form': form})
