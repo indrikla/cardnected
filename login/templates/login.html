@@ -1,7 +1,11 @@
 {% extends 'base_template.html' %}
 {% load static %}
-{% block title %}{{ section.title }}{% endblock %}
-
+<head>
+    <meta charset="UTF-8">
+     <title>
+        {% block title %} Log In | cardnected {% endblock %}
+     </title>
+</head>
 {% block content %}
 
 <div class="container">

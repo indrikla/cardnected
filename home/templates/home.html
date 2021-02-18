@@ -1,30 +1,101 @@
 {% extends 'base_template.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
      <title>
-        {% block title %} Home {% endblock %}
+        {% block title %} cardnected | Home {% endblock %}
      </title>
 </head>
 
 {% block content%}
+<style>
+    button:focus,
+    input:focus,
+    textarea:focus,
+    select:focus {
+      outline: none; }
+    
+    .tabs {
+      display: block;
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: flex;
+      -webkit-flex-wrap: wrap;
+      -moz-flex-wrap: wrap;
+      flex-wrap: wrap;
+      margin: 0;
+      overflow: hidden; }
+      .tabs [class^="tab"] label,
+      .tabs [class*=" tab"] label {
+        color: #c9c9c9;
+        cursor: pointer;
+        display: block;
+        font-size: 1.1em;
+        font-weight: 300;
+        line-height: 1em;
+        padding: 2rem 0;
+        text-align: center; }
+      .tabs [class^="tab"] [type="radio"],
+      .tabs [class*=" tab"] [type="radio"] {
+        border-bottom: 1px solid rgba(204, 204, 204, 0.5);
+        cursor: pointer;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        display: block;
+        width: 100%;
+        -webkit-transition: all 0.3s ease-in-out;
+        -moz-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out; }
+        .tabs [class^="tab"] [type="radio"]:hover, .tabs [class^="tab"] [type="radio"]:focus,
+        .tabs [class*=" tab"] [type="radio"]:hover,
+        .tabs [class*=" tab"] [type="radio"]:focus {
+          border-bottom: 1px solid #d8183b; }
+        .tabs [class^="tab"] [type="radio"]:checked,
+        .tabs [class*=" tab"] [type="radio"]:checked {
+          border-bottom: 2px solid #db163a; }
+        .tabs [class^="tab"] [type="radio"]:checked + div,
+        .tabs [class*=" tab"] [type="radio"]:checked + div {
+          opacity: 1; }
+        .tabs [class^="tab"] [type="radio"] + div,
+        .tabs [class*=" tab"] [type="radio"] + div {
+          display: block;
+          opacity: 0;
+          padding: 1.5vw 0;
+          width: 90%;
+          -webkit-transition: all 0.3s ease-in-out;
+          -moz-transition: all 0.3s ease-in-out;
+          -o-transition: all 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out; }
+      .tabs .tab-2 {
+        width: 50%; }
+        .tabs .tab-2 [type="radio"] + div {
+          width: 200%;
+          margin-left: 200%; }
+        .tabs .tab-2 [type="radio"]:checked + div {
+          margin-left: 0; }
+        .tabs .tab-2:last-child [type="radio"] + div {
+          margin-left: 100%; }
+        .tabs .tab-2:last-child [type="radio"]:checked + div {
+          margin-left: -100%; }
+</style>
 
 <div class="container">
 
-
-    <div class="background pc-only">
-        <div class="background ">
-            <img id="buletGede" src="{% static 'images/bigBolb.png' %}" style="position: absolute; width: 44%; top:0; right:0;" 
-            class="rellax lazy" data-rellax-speed="-3">
-        </div>
-    </div>
     <div class="background">
         <div class="background">
-            <img class="lazy center"src="{% static 'images/logoBG.svg' %}" style="width: 60%;position: absolute; top:922px; right:0;opacity:0.5;z-index:-1;" >
+            <img class="lazy center background"src="{% static 'images/logoBG.svg' %}" style="width: 60%;position: absolute; top:922px; right:0;opacity:0.6;" >
         </div>
     </div>
+
+    <div class="background pc-only">
+        <div class="background">
+            <img id="buletGede" src="{% static 'images/bigBolb.png' %}" style="position: absolute; width: 44%; top:0; right:0;" 
+            class="rellax lazy background" data-rellax-speed="-3">
+        </div>
+    </div>
+
 
     <div class="background ">
         <div class="background pc-only" style="position: absolute; top:0; left:0;">
@@ -63,12 +134,6 @@
         <div class="background" style="position: absolute; top:1400px;left:0;opacity:0.5;">
             <img src="{% static 'images/bigbg.svg' %}" style="width: 100%;" 
             class="rellax lazy" data-rellax-speed="-3">
-        </div>
-    </div>
-    <div class="background ">
-        <div class="background " style="position: absolute; top:1788px;left:-100px;">
-            <img class=lazy src="{% static 'images/bola.png' %}" style="width: 80%;" 
-            class="rellax" data-rellax-speed="-1">
         </div>
     </div>
 
@@ -296,21 +361,52 @@
             <div class="col-lg-7">
                 <h4 class="title"><span style="color: maroon;"><u>the "rules"</u></span></h4>
                 <h1 class="title titletext"> how to <span id="anot3">play</span></h1>
-                <ul class="padding-y pc-only" style="padding-left:1vw;list-style:decimal">
-                    <li>Ask anyone to join you to play the game together.</li>
-                    <li>Set up any video conference call</li>
-                    <li>Customize your game <a class="playNowButton">here</a>, then </li>
-                    <li><u>Share your screen</u> so the other player can pick the cards</li>
-                    <span class=oliver><b>Enjoy the experience!</b></span>
-                </ul>
+                <div class="tabs">
+                    <div class="tab-2">
+                        <label for="tab2-1" style="color: maroon;padding-bottom: 1vw;">ONLINE</label>
+                        <input id="tab2-1" name="tabs-two" type="radio" checked="checked">
+                        <div>
+                            <ul class="padding-y pc-only" style="padding-left:2vw;list-style:decimal">
+                                <li>Ask anyone to join you to play the game together.</li>
+                                <li>Set up any video conference call</li>
+                                <li>Customize your game <a href="{% url 'gameplay' %}">here</a>, then </li>
+                                <li><u>Share your screen</u> so the other player can pick and answer the cards</li>
+                                <span class=oliver><b>Enjoy the experience!</b></span>
+                            </ul>
+        
+                            <ul class="padding-y mobile marginMobile" style="padding-left:2vw;list-style:decimal">
+                                <li>Ask anyone to join you to play the game together.</li>
+                                <li>Set up any video conference call</li>
+                                <li>Customize your game <a href="{% url 'gameplay' %}">here</a>, then </li>
+                                <li><u>Share your screen</u> so the other player can pick and answer the cards</li>
+                                <span class=oliver><b>Enjoy the experience!</b></span>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="tab-2">
+                        <label for="tab2-2" style="color: maroon;padding-bottom: 1vw;">OFFLINE</label>
+                        <input id="tab2-2" name="tabs-two" type="radio">
+                        <div>
+                            <ul class="padding-y pc-only" style="padding-left:2vw;list-style:decimal">
+                                <li>Ask anyone to join you to play the game together.</li>
+                                <li>You can play with <u>one device for all</u>, or <u> one device for each player</u>. Whatever suits you the most</li>
+                                <li>Customize your game <a href="{% url 'gameplay' %}">here</a>, then </li>
+                                <li>Take turns to pick and answer the cards!</li>
+                                <span class=oliver><b>Enjoy the experience!</b></span>
+                            </ul>
+        
+                            <ul class="padding-y mobile marginMobile" style="padding-left:2vw;list-style:decimal">
+                                <li>Ask anyone to join you to play the game together.</li>
+                                <li>You can play with <u>one device for all</u>, or <u> one device for each player</u>. Whatever suits you the most</li>
+                                <li>Customize your game <a href="{% url 'gameplay' %}">here</a>, then </li>
+                                <li>Take turns to pick and answer the cards!</li>
+                                <span class=oliver><b>Enjoy the experience!</b></span>
+                            </ul>
+                          </div>
+                        </div>
+                  </div>
 
-                <ul class="padding-y mobile marginMobile" style="padding-left:1vw;list-style:decimal">
-                    <li>Ask anyone to join you to play the game together.</li>
-                    <li>Set up any video conference call</li>
-                    <li>Customize your game <a class="playNowButton">here</a>, then </li>
-                    <li><u>Share your screen</u> so the other player can pick the cards</li>
-                    <span class=oliver><b>Enjoy the experience!</b></span>
-                </ul>
+                    
 
                 <p class="bodytext2">While the rules of the game are really <u>up to you</u>, we do have a few suggestions for how to play.</p>
                 <div class="aks-accordion" itemscope data-accordion="">

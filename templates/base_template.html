@@ -12,12 +12,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/style.min.css' %}"/>
 	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
-    <!-- <link rel="stylesheet" href="//gitcdn.link/repo/wintercounter/Protip/master/protip.min.css"> -->
 
     <meta name="google-site-verification" content="v49_Xf0jBBIJx8y-3rCYsVccH0Z2qznhjx-LfY0j4iM" />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
-    <title>cardnected</title>
+    <title>{% block title %}cardnected | Home{% endblock %}</title>
 </head>
+
 <body>
   <div class="container">
     <nav class="navbar navbar-expand-lg navbar-light">
@@ -88,8 +87,7 @@
         <img src="{% static 'images/alibaba.svg' %}" style="width:55%; max-width:200px;">
         <img src="{% static 'images/codepolitan.svg' %}" style="width:55%; max-width:200px;">
       </div>
-      <!-- 👁💧👅💧👁 -->
-      <p class="gaegu text-center" >created with <\\\3 by <b style="font-weight: 700;"><a class=linkin style="color:white" href="{% url 'creator' %}">tokkiyguk</a></b></p>
+      <p class="gaegu text-center" >created with <\\\3 by <b style="font-weight: 700;"><a class=linkin style="color:white" href="{% url 'creator' %}">indrikla</a></b></p>
       <div class="col-md-4 col-sm-6 col-xs-12 center">
         <ul class="social-icons center" style="list-style: none;">
           <li><a href="https://www.linkedin.com/in/indrikla/" class="social-icon link"> <i class="fa fa-linkedin"></i></a></li>
