@@ -94,26 +94,14 @@ class Report(models.Model):
     def __str__(self):
         return self.report
 
+class GameplayRecord(models.Model):
+    player = models.CharField('Player', max_length=100, null=True, blank=True)
+    pack = models.CharField('Pack', max_length=200, null=True, blank=True)
+    numOfCards = models.IntegerField('Number of Cards', null=True, blank=False)
+    dateTime = models.DateTimeField('Time', auto_now_add=True, null=True, blank=False)
 
-# class Player(models.Model):
-#     numberOfPlayer = models.IntegerField('Number of Players', default=2)
-#     if numberOfPlayer == 2 :
-#         firstPlayer = models.TextField('Player 1', max_length=100, null=True, blank=False)
-#         secondPlayer = models.TextField('Player 2', max_length=100, null=True, blank=False)
-#     pack = models.CharField('Card Pack', 
-#         max_length=120, null=True, blank=False,
-#         choices = CARDPACK_CHOICES, 
-#         )
-#     if pack == "Dig Deeper" :
-#         level = models.IntegerField('Number of Players', default=1,
-#         validators=[
-#                 MaxValueValidator(3),
-#                 MinValueValidator(1)
-#             ]
-#         )
-     
-#     class Meta:
-#         db_table = 'player'
+    class Meta:
+        db_table = 'GameplayRecord'
 
-#     def __str__(self):
-#         return self.question
+    def __str__(self):
+        return self.pack

@@ -425,7 +425,9 @@ $(document).ready(() => {
 			method: 'POST',
 			url: finalUrl,
 			data: {
+				player: sessionStorage.getItem("Players"),
 				pack: pack, 
+				numOfCard: numOfCard,
 				gameStateOnGoing: "Yes",
 				'csrfmiddlewaretoken': $('input[name=csrfmiddlewaretoken]').val()
 			},

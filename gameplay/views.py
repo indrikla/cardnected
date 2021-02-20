@@ -15,14 +15,16 @@ def gameplay(request):
 def form(request):
     data = {'success': False} 
     if request.method == 'POST':        
-        print(request.POST)
         gameStateResponse = request.POST.get('gameStateOnGoing')
         request.session['gameStateOnGoing'] = gameStateResponse
-
+        gameplayDB = GameplayRecord()
+        gameplayDB.player = request.POST.get('player')
+        gameplayDB.pack = request.POST.get('pack')
+        gameplayDB.numOfCards = int(request.POST.get('numOfCard'))
+        gameplayDB.save()
         data['success'] = True
-        # request.session.set_expiry(0)
         return JsonResponse(data, safe=False)
-
+        
     elif request.method == 'GET':
         return render(request, "form.min.html")
 
@@ -60,8 +62,6 @@ def updateSession(request):
         key = request.POST.get('key')
         value = request.POST.get('value')
         request.session[key] = value
-        print(request.session[key])
-    # return redirect('/')
     return HttpResponse("ok")
 
 def feedback(request):
