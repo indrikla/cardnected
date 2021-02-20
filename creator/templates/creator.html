@@ -13,7 +13,7 @@
 <div class="container" style="overflow: hidden;">
     <div class="row margin">
         <div class="col-lg-6">
-            <img class="center centerver img-responsive lazy" src="{% static 'images/all.png' %}" style="width: 87%;margin-bottom:5vw" class="padding-y center">
+            <img class="center centerver img-responsive lazy" src="{% static 'images/all.png' %}" style="width: 87%;" class="padding-y center">
         </div>
         <div class="background ">
             <div class="background" style="position: absolute; top:0; left:0;">
@@ -27,14 +27,49 @@
                 HEELLOOOO! My name is Indri Klarissa Ramadhanti, you can call me <b>Risa</b> for short. 
                 Currently studying <b>Information System</b> in University of Indonesia, class of 2019. <br><br>
                 I define myself as an aspiring <b>Creative Technologist</b> who loves to create and 
-                dreams to build something that helps others build. Oh, and <span class=med><i>I do believe in the power of technology to make human lives better.</i></span> <br><br>
-                I have plenty of experience in <b>Visual and Motion Design</b> and is highly interested in 
-                <span class=anot>Edtech, User Experience Design, Computer Animation, Augmented/Virtual Reality, and Web Development.</span> <br><br>       
-                I work alone, most of the time. But <u>would really appreciate it if anyone's interested in collaborating with me</u>, though.
-                You can hit me up on my <a class=link href="https://www.linkedin.com/in/indrikla/">LinkedIn</a>, or just like, casually talk to me on <a  class=link  href="https://t.me/indrikla">Telegram</a> :D         
+                dreams to build something that helps others build. Oh, and <span class=med><i>I do believe in the power of technology to make human lives better.</i></span>
+                <span class="dots">... </span> 
+                    <span class="more">
+                        <br><br>I have plenty of experience in <b>Visual and Motion Design</b> and is highly interested in 
+                        <span class=anot>Edtech, User Experience Design, Computer Animation, Augmented/Virtual Reality, and Web Development.</span> <br><br>       
+                        I work alone, most of the time. But <u>would really appreciate it if anyone's interested in collaborating with me</u>, though.
+                        You can hit me up on my <a class=link href="https://www.linkedin.com/in/indrikla/">LinkedIn</a>, or just like, casually talk to me on <a  class=link  href="https://t.me/indrikla">Telegram</a> :D <br>        
+                    </span>
+
+                    <b><a class="readMore gaegu">Read more</a></b>
             </p>
         </div>
     </div>
+
+    <!-- LOG Dkk -->
+    <div class="tabs">
+
+        <div class="tab-2">
+            <label for="tab2-1" style="color: maroon;padding-bottom: 1vw;">
+                <i class="fa fa-comments-o" aria-hidden="true"></i> Feedback
+            </label>
+            <input id="tab2-1" name="tabs-two" type="radio" checked="checked">
+            <div>
+                a
+            </div>
+        </div>
+
+        <div class="tab-2">
+            <label for="tab2-2" style="color: maroon;padding-bottom: 1vw;">
+                <i class="fa fa-history" aria-hidden="true"></i> Log & Updates              
+            </label>
+            <input id="tab2-2" name="tabs-two" type="radio">
+            <div>
+                a
+            </div>
+        </div>
+
+        
+
+
+    </div>
+
+
 </div>
 <script type="module">
     import { annotate } from 'https://unpkg.com/rough-notation?module';
@@ -62,9 +97,6 @@
             stack.prepend(cardd);
         }, 700);
     }
-
-    var rellax = new Rellax('.rellax');
-
 
 </script>
 
