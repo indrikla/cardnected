@@ -11,6 +11,11 @@
 {% block content%}
 
 <div class="container" style="overflow: hidden;">
+    <div class="background">
+        <div class="background">
+            <img loading="lazy" class="center background"src="{% static 'images/logoBG.svg' %}" style="width: 60%;position: absolute; top:422px; right:0;opacity:0.6;" >
+        </div>
+    </div>
     <div class="row margin">
         <div class="col-lg-6">
             <img class="center centerver img-responsive lazy" src="{% static 'images/all.png' %}" style="width: 87%;" class="padding-y center">
@@ -46,21 +51,37 @@
 
         <div class="tab-2">
             <label for="tab2-1" style="color: maroon;padding-bottom: 1vw;">
-                <i class="fa fa-comments-o" aria-hidden="true"></i> Feedback
+                <i class="fa fa-comments-o" aria-hidden="true"></i>  Feedback
             </label>
             <input id="tab2-1" name="tabs-two" type="radio" checked="checked">
-            <div>
-                a
+            <div class="container text-center center"><br>
+                <h3 class="title center" style="width:77%"> How Can We Make cardnected Work for You?</h3><br>
+                <div class=center style="width:77%">
+                    We're always working to make <span class="title"><b>cardnected</b></span> exactly what you need. Please help us make <span class="title"><b>cardnected</b></span> better by telling your experience with us below, thank you in advance.
+                <br><br><a class="typeform-share button" href="https://form.typeform.com/to/LJzglif8?typeform-medium=embed-snippet" target="_blank" data-mode="popup" style="display:inline-block;background-color:#ad2323;color:white;cursor:pointer;text-align:center;margin:0;padding:0px 33px;border-radius:25px;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:bold;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;" data-size="100" target="_blank">
+                    Start the Survey </a> 
+                </div>
+                
+                    <script> (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm_share", b="https://embed.typeform.com/"; if(!gi.call(d,id)){ js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })() </script>
             </div>
         </div>
 
         <div class="tab-2">
             <label for="tab2-2" style="color: maroon;padding-bottom: 1vw;">
-                <i class="fa fa-history" aria-hidden="true"></i> Log & Updates              
+                <i class="fa fa-history" aria-hidden="true"></i>  Release history              
             </label>
             <input id="tab2-2" name="tabs-two" type="radio">
             <div>
-                a
+                <div class="container text-center">
+                    <h1 class="title">Log</h1>
+                    {% for log in log %}
+                    <div style="margin: 2vw 0 3vw 0;">
+                        <b><h5>{{ log.version }} - {{ log.title }}</h5></b>
+                        <h6>{{ log.date }}</h6>
+                        <p>{{ log.desc }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
             </div>
         </div>
 

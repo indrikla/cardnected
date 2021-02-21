@@ -9,7 +9,7 @@ def gameplay(request):
     # request.session['gameStateOnGoing'] = "No"
     if 'gameStateOnGoing' in request.session.keys():
         if(request.session['gameStateOnGoing'] == "Yes"):
-            return render(request, "gameplay.min.html")
+            return render(request, "gameplay.html")
     return redirect(form)
 
 def form(request):

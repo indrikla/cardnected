@@ -224,13 +224,14 @@ $(document).ready(() => {
 	$('.close').click(function(event) {
 		event.preventDefault();
 		modal.style.display = "none";
+		$('.shownCard').attr('src', '#')
 		if (numOfCardOpened == sessionStorage.getItem("numOfCard") && modal.style.display != "block") {
 			setTimeout(alertPopUp, 2000);
 			setTimeout(finishRedirect, 3000);
 		}
 	})
 	$('.modal-close').click(function(event) {
-		console.log('kena lo')
+		$('.shownCard').attr('src', '#')
 		
 		if (numOfCardOpened == sessionStorage.getItem("numOfCard")) {
 			$('.js-tilt').replaceWith('<div class="padding-y"><img src="/static/images/empty.svg" style="width: 300px; max-height: 300px;margin-bottom:2vw;"></div>') 	
@@ -294,6 +295,12 @@ $(document).ready(() => {
 		$.ajax({
 			method: 'GET',
 			url: 'openCard?' + 'pack=' + sessionStorage.getItem("pack"),
+			beforeSend: function() {
+				$('#loader').show();
+			},
+			complete: function() {
+				$('#loader').hide();
+			},
 			success: function(response) {
 				if (response.success === false) {
 					updateSession("gameStateOnGoing", "No")
@@ -311,8 +318,8 @@ $(document).ready(() => {
 					cardID = cardJSONData[cardIndex].pk
 					cardQuestion = cardJSONData[cardIndex].fields['question'];
 					cardImage = cardJSONData[cardIndex].fields['image'];
-					$('.shownCard').attr('src', cardImage)
-
+					
+					$('#shownCard').attr('src', cardImage);
 				}
 			}
 				
