@@ -45,7 +45,7 @@ function updateSession(key, value) {
 }
 
 $(document).ready(() => {
-	
+
 	$('.readMore').click(function(e) {
 		if ($('.dots').css('display') === "none") {
 			$('.dots').css('display', 'inline');
@@ -124,7 +124,19 @@ $(document).ready(() => {
 			}
 		})
 	})
-	
+	gameplayOWL
+
+	$('#gameplayOWL').owlCarousel( {
+		loop: false,
+		center: false,
+		items: 1,
+		margin: 10,
+		autoplay: false,
+		dots:true,
+		autoplayTimeout: 8500,
+		smartSpeed: 450,
+  		navText: ['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>']
+	});
 
 	$('#customers-testimonials').owlCarousel( {
 		loop: false,
@@ -224,14 +236,14 @@ $(document).ready(() => {
 	$('.close').click(function(event) {
 		event.preventDefault();
 		modal.style.display = "none";
-		$('.shownCard').attr('src', '#')
+		// $('.shownCard').attr('src', '#')
 		if (numOfCardOpened == sessionStorage.getItem("numOfCard") && modal.style.display != "block") {
 			setTimeout(alertPopUp, 2000);
 			setTimeout(finishRedirect, 3000);
 		}
 	})
 	$('.modal-close').click(function(event) {
-		$('.shownCard').attr('src', '#')
+		// $('.shownCard').attr('src', '#')
 		
 		if (numOfCardOpened == sessionStorage.getItem("numOfCard")) {
 			$('.js-tilt').replaceWith('<div class="padding-y"><img src="/static/images/empty.svg" style="width: 300px; max-height: 300px;margin-bottom:2vw;"></div>') 	
@@ -295,12 +307,6 @@ $(document).ready(() => {
 		$.ajax({
 			method: 'GET',
 			url: 'openCard?' + 'pack=' + sessionStorage.getItem("pack"),
-			beforeSend: function() {
-				$('#loader').show();
-			},
-			complete: function() {
-				$('#loader').hide();
-			},
 			success: function(response) {
 				if (response.success === false) {
 					updateSession("gameStateOnGoing", "No")
@@ -319,7 +325,7 @@ $(document).ready(() => {
 					cardQuestion = cardJSONData[cardIndex].fields['question'];
 					cardImage = cardJSONData[cardIndex].fields['image'];
 					
-					$('#shownCard').attr('src', cardImage);
+					$('.shownCard').attr('src', cardImage);
 				}
 			}
 				
