@@ -124,7 +124,6 @@ $(document).ready(() => {
 			}
 		})
 	})
-	gameplayOWL
 
 	$('#gameplayOWL').owlCarousel( {
 		loop: false,
