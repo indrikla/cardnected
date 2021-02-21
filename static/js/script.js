@@ -296,12 +296,13 @@ $(document).ready(() => {
 		if (sessionStorage.getItem('Players') == 'Two') {
 			player = (numOfCardOpened % 2 != 0) ? sessionStorage.getItem("firstPlayer") : sessionStorage.getItem("secondPlayer");
 			$('.playerTurn').text(player);
-		} else if (sessionStorage.getItem('Players') == 'Multi'){
-			$('.multiHide').css('display', 'none');
-			if ($(window).width() < 768) {
-				$('.shownCard').removeClass('center');
-			}
 		}
+		// else if (sessionStorage.getItem('Players') == 'Multi'){
+		// 	$('.multiHide').css('display', 'none');
+		// 	if ($(window).width() < 768) {
+		// 		$('.shownCard').removeClass('center');
+		// 	}
+		// }
 
 		$.ajax({
 			method: 'GET',
@@ -337,8 +338,26 @@ $(document).ready(() => {
 
     $('#pack').val('');
     var valueSelected = this.value;
+	if ($(window).width() < 768) {
+		if (valueSelected == 'Two Players') {
 
-    if (valueSelected == 'Two Players') {
+			$('#DigDeeperOption').removeAttr('disabled');
+			$('#DigDeeperOption').css('color', '#495057');
+
+			$('#LoveBirdsOption').removeAttr('disabled');
+			$('#LoveBirdsOption').css('color', '#495057');
+
+		} else {
+
+			$('#DigDeeperOption').attr('disabled', 'disabled');
+			$('#DigDeeperOption').css('color', '#d3d3d3');
+
+			$('#LoveBirdsOption').attr('disabled', 'disabled');
+			$('#LoveBirdsOption').css('color', '#d3d3d3');
+		}
+
+	} else {
+		if (valueSelected == 'Two Players') {
 			$('.playerName').toggleClass('show')
 
 			$('#DigDeeperOption').removeAttr('disabled');
@@ -356,6 +375,8 @@ $(document).ready(() => {
 			$('#LoveBirdsOption').attr('disabled', 'disabled');
 			$('#LoveBirdsOption').css('color', '#d3d3d3');
 		}
+	}
+
   	});
 
   	$('#pack').on('change', function(event) {
