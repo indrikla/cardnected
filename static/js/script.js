@@ -420,6 +420,7 @@ $(document).ready(() => {
 			finalUrl = 'form?' + 'pack=' + pack + '&firstPlayer=' + firstPlayer + '&secondPlayer=' + secondPlayer;   
 
 		} else if ($('#numOfPlayer').val() == 'Multi Players') {
+			$('.multiHide').css('display', 'none');
 			sessionStorage.setItem('Players', 'Multi')
 			finalUrl = 'form?' + 'pack=' + pack;
 
