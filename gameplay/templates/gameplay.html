@@ -54,21 +54,24 @@
     
 <!-- MOBILE -->
     <div id="open-modal" class="modal-window">
-        <div>
-            <a href="#" title="Close" class="modal-close">
-                <i class="fa fa-times-circle" aria-hidden="true"></i>
-            </a>
-            <!-- <p class="center text-center gaegu multiHide" style="font-size:3vw;font-weight:400;"> <b><u><span class="playerTurn"></span></u></b>'s turn to answer</p> -->
-            <div class="cardContainer">
-                <img id="shownCard" class=" card-shadow lazy shownCard" src="#" style="width: 90%;" >
+
+        <div class="cardContainer">
+            <img id="shownCard" class=" card-shadow lazy shownCard" src="#" style="width: 90%; display:block" >
+            <div class="center">
+                <a href="#" title="Close" class="modal-close center" style="display:block; transform:rotate(-90deg)">
+                    <button class="primary center"><b>x</b></button>
+                </a>
             </div>
         </div>
+
     </div>
 
     <div class="col-lg-12 padding-full center margin text-center mobile" style="overflow: none;">
         <div class="js-tilt padding-y" style="margin-top: 10vw;margin-bottom: 5vw;">
+            <p>Tap the card to see the question</p>
+
             <a href="#open-modal">
-                <lottie-player class="center"src="https://assets8.lottiefiles.com/private_files/lf30_bozsm8dp.json"  background="transparent"  speed="2"  style="width: 80%;" autoplay loop  ></lottie-player>
+                <lottie-player class="center"src="https://assets5.lottiefiles.com/private_files/lf30_kgemohbq.json"  background="transparent"  speed="2"  style="width: 80%;" autoplay loop  ></lottie-player>
             </a>
         </div>
     </div>
