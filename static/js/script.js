@@ -297,12 +297,9 @@ $(document).ready(() => {
 			player = (numOfCardOpened % 2 != 0) ? sessionStorage.getItem("firstPlayer") : sessionStorage.getItem("secondPlayer");
 			$('.playerTurn').text(player);
 		}
-		// else if (sessionStorage.getItem('Players') == 'Multi'){
-		// 	$('.multiHide').css('display', 'none');
-		// 	if ($(window).width() < 768) {
-		// 		$('.shownCard').removeClass('center');
-		// 	}
-		// }
+		else if (sessionStorage.getItem('Players') == 'Multi'){
+			$('.multiHide').css('display', 'none');
+		}
 
 		$.ajax({
 			method: 'GET',
