@@ -12,7 +12,7 @@
     
     <div id="myModal" class="modal">
 
-        <!-- Modal content -->
+        <!--PC ONLY -->
         <div class="modal-content w3-animate-zoom" >
 
             <div class=row>
@@ -33,7 +33,9 @@
             </div>
 
             <p class="center gaegu multiHide" style="font-size:3vw;font-weight:400; padding-bottom:1vw;margin-top: -2vw;"> <b><u><span class="playerTurn"></span></u></b>'s turn to answer</p>
-            <img id="shownCard" loading="lazy" class="center card-shadow lazy shownCard center" src="#" style="width: 60%;" >
+            <div class="cardContainer">
+                <img id="shownCard" loading="lazy" class="center card-shadow lazy shownCard center is-loading" src="#" style="width: 60%;" >
+            </div>
         </div>
     
     </div>
@@ -57,8 +59,9 @@
                 <i class="fa fa-times-circle" aria-hidden="true"></i>
             </a>
             <!-- <p class="center text-center gaegu multiHide" style="font-size:3vw;font-weight:400;"> <b><u><span class="playerTurn"></span></u></b>'s turn to answer</p> -->
-            <img id="shownCard" class=" card-shadow lazy shownCard" src="#" 
-            style="width: 90%;" >
+            <div class="cardContainer">
+                <img id="shownCard" class=" card-shadow lazy shownCard" src="#" style="width: 90%;" >
+            </div>
         </div>
     </div>
 

@@ -235,14 +235,13 @@ $(document).ready(() => {
 	$('.close').click(function(event) {
 		event.preventDefault();
 		modal.style.display = "none";
-		// $('.shownCard').attr('src', '#')
+		$('.shownCard').attr('src', '#')
 		if (numOfCardOpened == sessionStorage.getItem("numOfCard") && modal.style.display != "block") {
 			setTimeout(alertPopUp, 2000);
 			setTimeout(finishRedirect, 3000);
 		}
 	})
 	$('.modal-close').click(function(event) {
-		// $('.shownCard').attr('src', '#')
 		
 		if (numOfCardOpened == sessionStorage.getItem("numOfCard")) {
 			$('.js-tilt').replaceWith('<div class="padding-y"><img src="/static/images/empty.svg" style="width: 300px; max-height: 300px;margin-bottom:2vw;"></div>') 	
@@ -254,12 +253,18 @@ $(document).ready(() => {
 
 	window.onclick = function(event) {
 		if (event.target == modal) {
+			$('.shownCard').attr('src', '#')
 			modal.style.display = "none";
 			if (numOfCardOpened == sessionStorage.getItem("numOfCard") && modal.style.display != "block") {
 				setTimeout(alertPopUp, 2000);
 				setTimeout(finishRedirect, 3000);
 			}
 		}
+	}
+
+	$('.cardContainer').imagesLoaded().done( removeLoader );
+	function removeLoader() {
+		$('#shownCard').removeClass('is-loading');
 	}
 
 	$('.cardpack').click(function(event) {
@@ -285,9 +290,7 @@ $(document).ready(() => {
 			
 			window.onbeforeunload = null;
 			$(window).bind("beforeunload", function(){ return(false); });
-			$(this).css('transition', 'transform 0.8s')
-			$(this).css('transform-style', 'preserve-3d')
-			$(this).css('transform', 'rotateY(360deg)')
+			
 		}
 
 		
@@ -407,12 +410,12 @@ $(document).ready(() => {
 			$('.playerName').toggleClass('.show')
 			var first = $('#firstPlayer').val();
 			var second = $('#secondPlayer').val();
+
 			var firstPlayerClean = first.substring(0,36);
 			var secondPlayerClean = second.substring(0,36);
-			console.log(firstPlayerClean)
 
-			var firstPlayer = $('#firstPlayer').val() != "" ? sessionStorage.setItem("firstPlayer", firstPlayerClean) : sessionStorage.setItem("firstPlayer", "Player 1")
-			var secondPlayer = $('#secondPlayer').val() != "" ? sessionStorage.setItem("secondPlayer", secondPlayerClean) : sessionStorage.setItem("secondPlayer", "Player 2")
+			var firstPlayer = $('#firstPlayer').val() != "" && $('#firstPlayer').val() != " " ? sessionStorage.setItem("firstPlayer", firstPlayerClean) : sessionStorage.setItem("firstPlayer", "Player 1")
+			var secondPlayer = $('#secondPlayer').val() != "" && $('#secondPlayer').val() != " " ? sessionStorage.setItem("secondPlayer", secondPlayerClean) : sessionStorage.setItem("secondPlayer", "Player 2")
 
 			finalUrl = 'form?' + 'pack=' + pack + '&firstPlayer=' + firstPlayer + '&secondPlayer=' + secondPlayer;   
 

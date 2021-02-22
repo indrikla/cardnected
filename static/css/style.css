@@ -858,3 +858,12 @@ div.sticky {
 .marginLebay {
   margin-top: 11vw;
 }
+.is-loading {
+  background-image: url('loading2.gif');
+  background-color: rgb(235, 235, 235, 0.4);
+  max-height: 352px;
+  height:90%;
+  border-radius: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
