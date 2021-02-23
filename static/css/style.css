@@ -40,7 +40,7 @@ body {
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(88, 88, 88); /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.295); /* Black w/ opacity */
+    background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
     
   }
   
@@ -863,4 +863,7 @@ div.sticky {
   border-radius: 20px;
   background-repeat: no-repeat;
   background-position: center;
+}
+.modal-backdrop {
+  z-index: 0;
 }
