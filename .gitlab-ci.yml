@@ -1,6 +1,5 @@
 image: python:3.8
 stages:
-  - test
   - deploy
 
 variables:
@@ -19,43 +18,16 @@ cache:
   pip install -r requirements.txt
   python manage.py collectstatic --no-input
 
-.coverage_artifacts: &coverage_artifacts
-  artifacts:
-    paths:
-      - .coverage*
-
-
-UnitTest:
-  <<: *disable_on_template
-  <<: *coverage_artifacts
-  stage: test
-  before_script:
-    - *django_before_script
-  script:
-    - coverage run --parallel --include="./*" --omit="manage.py,project_name/*"
-      manage.py test --exclude-tag=functional
-
-FunctionalTest:
-  <<: *disable_on_template
-  <<: *coverage_artifacts
-  stage: test
-  before_script:
-    - apt-get update -q && apt-get install -yq chromium-driver
-    - *django_before_script
-  script:
-    - coverage run --parallel --include="./*" --omit="manage.py,project_name/*"
-      manage.py test --tag=functional
-
-
-Coverage:
-  <<: *disable_on_template
+Deployment:
+  rules:
+    - if: '$CI_COMMIT_REF_NAME == "master"'
+  image: ruby:2.7
   stage: deploy
   before_script:
-    - pip install coverage
-    - coverage combine
+    - gem install dpl
+    - wget -qO- https://cli-assets.heroku.com/install-ubuntu.sh | sh
   script:
-    - coverage report -m
-    - coverage html
-  artifacts:
-    paths:
-      - htmlcov/
+    - dpl --provider=heroku --app=$HEROKU_APPNAME --api-key=$HEROKU_APIKEY
+  environment:
+    name: production
+    url: $HEROKU_APP_HOST
